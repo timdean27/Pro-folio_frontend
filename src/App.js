@@ -37,9 +37,28 @@ if(!frontEndData) {
       return (
         <div key={index}>
       <h3>{dataRecived._id}</h3>
-      <h3>{dataRecived.name}</h3>
-      <h3>{dataRecived.img}</h3>
-      <h3>{dataRecived.title}</h3>
+      <h1>Marketing Info Obeject</h1>
+      <h3>{dataRecived.Marketing_info.coverLetter}</h3>
+      <h3>{dataRecived.Marketing_info.gitHub}</h3>
+      <h3>{dataRecived.Marketing_info.linkedIn}</h3>
+      <h3>{dataRecived.Marketing_info.resume}</h3>
+      <h1>Projects Obeject</h1>
+      <h2>project Obeject nside Projects</h2>
+      <h3>{dataRecived.Projects.project.Discription}</h3>
+      <h3>{dataRecived.Projects.project.image}</h3>
+      <h3>{dataRecived.Projects.project.shortVideo}</h3>
+      <h2>updates Obeject nside Projects</h2>
+      <h3>{dataRecived.Projects.updates.additions}</h3>
+      <h3>{dataRecived.Projects.updates.updateDiscription}</h3>
+      <h3>{dataRecived.Projects.updates.updatedAt}</h3>
+      <h1>reach_out_to_Dev Obeject</h1>
+      <h3>{dataRecived.reach_out_to_Dev.yourEmail}</h3>
+      <h3>{dataRecived.reach_out_to_Dev.yourName}</h3>
+      <h3>{dataRecived.reach_out_to_Dev.yourQuestion}</h3>
+      <h1>User Obeject</h1>
+      <h3>{dataRecived.user.password}</h3>
+      <h3>{dataRecived.user.profilePic}</h3>
+      <h3>{dataRecived.user.username}</h3>
       </div>
       )
     })}
