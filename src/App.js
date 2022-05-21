@@ -44,12 +44,12 @@ if(!frontEndData) {
       <h3>{dataRecived.Marketing_info.resume}</h3>
       <h1>Projects Obeject</h1>
       <h2>project Obeject nside Projects</h2>
-      <h3>{dataRecived.Projects.project.Discription}</h3>
+      <h3>{dataRecived.Projects.project.Description}</h3>
       <h3>{dataRecived.Projects.project.image}</h3>
       <h3>{dataRecived.Projects.project.shortVideo}</h3>
       <h2>updates Obeject nside Projects</h2>
       <h3>{dataRecived.Projects.updates.additions}</h3>
-      <h3>{dataRecived.Projects.updates.updateDiscription}</h3>
+      <h3>{dataRecived.Projects.updates.updateDescription}</h3>
       <h3>{dataRecived.Projects.updates.updatedAt}</h3>
       <h1>reach_out_to_Dev Obeject</h1>
       <h3>{dataRecived.reach_out_to_Dev.yourEmail}</h3>
