@@ -15,14 +15,25 @@ console.log("props.projectsData",props.projectsData)
         }
     })
 
+   
+
     const handleChange = (event) => {
+        event.preventDefault();
         console.log("event.target.name",event.target.name)
         console.log("event.target.value",event.target.value)
-        setNewProjectForm({...newProjectForm, [event.target.name]: event.target.value})
+        setNewProjectForm({...newProjectForm, 
+            Projects:{
+                project: {
+                    ...newProjectForm.project,
+            [event.target.name]: event.target.value
+            }}
+        })
         console.log("handle Change" ,newProjectForm)
     }
 
-const handleSubNewProj = (event) => {
+
+
+    const handleSubNewProj = (event) => {
         event.preventDefault();
         props.createProject(newProjectForm);
         setNewProjectForm({
@@ -60,22 +71,22 @@ const handleSubNewProj = (event) => {
       <form onSubmit={handleSubNewProj}>
       <textarea
           type='text'
-          value={newProjectForm.Projects.project.Description}
-          name='Projects.project.Description'
+          value={newProjectForm.Description}
+          name='Description'
           placeholder='Description'
           onChange={handleChange}
       />
       <input
           type='text'
-          value={newProjectForm.Projects.project.image}
-          name='Projects.project.image'
+          value={newProjectForm.image}
+          name='image'
           placeholder='image URL'
           onChange={handleChange}
       />
       <input
           type='text'
-          value={newProjectForm.Projects.project.shortVideo}
-          name='Projects.project.shortVideo'
+          value={newProjectForm.shortVideo}
+          name='shortVideo'
           placeholder='shortVideo URL'
           onChange={handleChange}
       />
