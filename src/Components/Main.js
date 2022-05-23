@@ -43,13 +43,15 @@ const Main = () => {
           )
         }
 
+
+
     return (
       <div className="App">
       <h1>React BackEnd</h1>
       <h1>We have data from backend</h1>
       {frontEndData.map((dataRecived) => {
         return (
-          <div key={dataRecived._id}>
+        <div key={dataRecived._id}>
         <h3>{dataRecived._id}</h3>
         <h1>Marketing Info Obeject</h1>
         <h3>{dataRecived.Marketing_info.coverLetter}</h3>
@@ -69,17 +71,18 @@ const Main = () => {
         <h3>{dataRecived.user.password}</h3>
         <h3>{dataRecived.reach_out_to_Dev.yourName}</h3>
         <h3>{dataRecived.reach_out_to_Dev.yourQuestion}</h3>
+        <Routes>
+        <Route exact path='/' 
+            element={<ShowProjectCards
+                projectsData={frontEndData}
+                createProject={createProject}
+            />} />
+    </Routes>
         </div>
         )
       })}
 
-      <Routes>
-        <Route exact path='/' 
-            element={<ShowProjectCards
-                frontEndData={frontEndData}
-                createProject={createProject}
-            />} />
-    </Routes>
+     
       </div>
     );
   }

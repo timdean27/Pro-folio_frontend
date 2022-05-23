@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const ShowProjectCards = (props) => {
-
+console.log("props.projectsData",props.projectsData)
     const [newProjectForm, setNewProjectForm] = useState({
         Projects:{
 
@@ -39,7 +39,7 @@ const handleSubNewProj = (event) => {
 
 
     const loadedProj = () => {
-        return props.frontEndData.map((dataRecived) => (
+        return props.projectsData.map((dataRecived) => (
                 <div key={dataRecived._id} className='projectCard'>
                 <h2>Showing Prjects Obeject from ShowProjectCards</h2>
                 <h3>{dataRecived.Projects.project.Description}</h3>
@@ -80,7 +80,7 @@ const handleSubNewProj = (event) => {
       <input type='submit' value='Add New Project' />
   </form>
 
-      {props.frontEndData ? loadedProj() : loadingProj()}
+      {props.projectsData ? loadedProj() : loadingProj()}
     </div>
   )
 }
