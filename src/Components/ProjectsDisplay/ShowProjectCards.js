@@ -16,6 +16,8 @@ console.log("props.projectsData",props.projectsData)
     })
 
     const handleChange = (event) => {
+        console.log("event.target.name",event.target.name)
+        console.log("event.target.value",event.target.value)
         setNewProjectForm({...newProjectForm, [event.target.name]: event.target.value})
         console.log("handle Change" ,newProjectForm)
     }
