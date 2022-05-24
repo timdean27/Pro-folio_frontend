@@ -5,7 +5,7 @@ import ShowMarketing from '../Pages/Marketing/ShowMarketing';
 const MarketingRoutes = () => {
 
 const [MarketingData, setMarketingData] = useState([])
-const urlMarketing = 'http://localhost:4321/home/marketing'
+const urlMarketing = 'http://localhost:4000/home/marketing'
 
 async function getMarketingData() {
   await fetch(urlMarketing).then((res) => res.json())

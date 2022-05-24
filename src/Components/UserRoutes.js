@@ -3,7 +3,7 @@ import ShowUsers from '../Pages/Users/ShowUsers';
 
 const UserRoutes = () => {
     const [userData, setuserData] = useState([])
-    const urlUser = 'http://localhost:4321/home/user'
+    const urlUser = 'http://localhost:4000/home/user'
 
     async function getUserData() {
         await fetch(urlUser).then((res) => res.json())
