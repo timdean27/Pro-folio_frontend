@@ -15,17 +15,29 @@ console.log("props.projectsData",props.projectsData)
         }
     })
 
-   
+    // const handleChange = (event) => {
+    //     event.preventDefault();
+    //     console.log("event.target.name",event.target.name)
+    //     console.log("event.target.value",event.target.value)
+    //    let storValue =  {...newProjectForm,
+    //     Projects:{
+    //     project:{[event.target.name]: event.target.value}
+    //     }}
+
+    //     setNewProjectForm({storValue})
+    //     console.log("handle Change" ,newProjectForm)
+    // }
 
     const handleChange = (event) => {
         event.preventDefault();
         console.log("event.target.name",event.target.name)
         console.log("event.target.value",event.target.value)
+
         setNewProjectForm({...newProjectForm, 
             Projects:{
                 project: {
                     ...newProjectForm.project,
-            [event.target.name]: event.target.value
+                    [event.target.name]: event.target.value
             }}
         })
         console.log("handle Change" ,newProjectForm)
