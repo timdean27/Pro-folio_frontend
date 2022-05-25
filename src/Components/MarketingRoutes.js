@@ -28,6 +28,16 @@ async function getMarketingData() {
 
   }
   
+  const createMarketing = async (newMarketing) => {
+    await fetch(urlMarketing, {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newMarketing)
+    })
+    getMarketingData();
+  }
     useEffect(() => {
 
       getMarketingData()
