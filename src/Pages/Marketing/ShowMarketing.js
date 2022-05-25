@@ -5,13 +5,6 @@ import React from 'react'
 const ShowMarketing = ({MarketingData, createMarketing}) => {
     console.log('props from ShowContact',MarketingData)
 
-    import React from 'react'
-    import { useState } from 'react'
-
-const ShowMarketing = ({MarketingData, createMarketing}) => {
-    console.log("props from ShowContact",MarketingData)
-
-
     const [newMarketingForm, setnewMarketingForm] = useState({
       Marketing_info: {
         gitHub: '',
@@ -44,7 +37,7 @@ const ShowMarketing = ({MarketingData, createMarketing}) => {
     })
   }
 
-  }
+  
     const loadedMarketingData = () => {
       return MarketingData.map((data) => (
               <div key={data._id} className='user'>
@@ -59,6 +52,7 @@ const ShowMarketing = ({MarketingData, createMarketing}) => {
     const loadingMarketingData = () => {
       return <h1>Loading.........</h1>
     }
+
     return (
       <div>
       <h1>ShowMarketing</h1>
