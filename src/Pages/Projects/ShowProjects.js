@@ -10,7 +10,9 @@ const ShowProjects= ({ProjectsData}) => {
   const loadedProjects = () => {
     return ProjectsData.map((data) => (
             <div key={data._id} className='Projects'>
+            <Link to={`/project/${data._id}`}>
               <p>{data.project.Description}</p>
+              </Link>
               <p>{data.project.image}</p>
               <p>{data.project.shortVideo}</p>
             </div>

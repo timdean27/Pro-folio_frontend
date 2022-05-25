@@ -1,7 +1,7 @@
 import React, { useState , useEffect} from 'react'
 import { Routes, Route} from 'react-router-dom';
 import ShowProjects from '../Pages/Projects/ShowProjects';
-
+import SingleProjectView from '../Pages/Projects/SingleProjectView';
 const ProjectsRoutes = () => {
 
     const [ProjectsData, setProjectsData] = useState([])
@@ -31,6 +31,13 @@ const ProjectsRoutes = () => {
   return (
     <div>
     <Routes>
+    <Route 
+    path= '/Project/:id'
+          element={<SingleProjectView
+              ProjectsData ={ProjectsData}/>}
+          
+        />
+      
     <Route path= '/'element={<ShowProjects ProjectsData ={ProjectsData}/>}/>
     </Routes>
     </div>
