@@ -1,7 +1,7 @@
 import React, { useState , useEffect} from 'react'
 import { Routes, Route} from 'react-router-dom';
 import ShowMarketing from '../Pages/Marketing/ShowMarketing';
-
+// test commit
 const MarketingRoutes = () => {
 
 const [MarketingData, setMarketingData] = useState([])
