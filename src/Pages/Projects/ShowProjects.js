@@ -5,17 +5,14 @@ import React from 'react'
 
 const ShowProjects= ({ProjectsData}) => {
 
-  console.log("props from showProjects",ProjectsData)
+  //console.log("props from showProjects",ProjectsData)
 
   const loadedProjects = () => {
     return ProjectsData.map((data) => (
             <div key={data._id} className='Projects'>
-              <p>{data.Projects.project.Description}</p>
-              <p>{data.Projects.project.image}</p>
-              <p>{data.Projects.project.shortVideo}</p>
-              <p>{data.Projects.updates.additions}</p>
-              <p>{data.Projects.updates.updateDescription}</p>
-              <p>{data.Projects.updates.updatedAt}</p>
+              <p>{data.project.Description}</p>
+              <p>{data.project.image}</p>
+              <p>{data.project.shortVideo}</p>
             </div>
         )
     )

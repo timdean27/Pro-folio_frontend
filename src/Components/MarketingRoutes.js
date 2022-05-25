@@ -10,24 +10,13 @@ const urlMarketing = 'http://localhost:4000/home/marketing'
 async function getMarketingData() {
   await fetch(urlMarketing).then((res) => res.json())
     .then((data) => {
-      console.log('Marketing Data  insisde fetch funciton', data)
+      //console.log('Marketing Data  insisde fetch funciton', data)
 
       setMarketingData(data)
     }).catch(console.error);
   }
 
-  const createMarketing = async (newMarketing) => {
-    await fetch(urlMarketing, {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newMarketing)
-    })
-    getMarketingData();
-
-  }
-  
+ 
   const createMarketing = async (newMarketing) => {
     await fetch(urlMarketing, {
         method: 'post',
@@ -54,7 +43,9 @@ async function getMarketingData() {
 
   return (
     <div>
-    <ShowMarketing MarketingData ={MarketingData} createMarketing={createMarketing}/>
+    <Routes>
+    <Route path= '/'element={<ShowMarketing MarketingData ={MarketingData} createMarketing={createMarketing}/>}/>
+    </Routes>
     </div>
   )
 }
