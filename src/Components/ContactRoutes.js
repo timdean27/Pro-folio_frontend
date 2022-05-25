@@ -16,6 +16,17 @@ const ContactRoutes = () => {
           }).catch(console.error);
         }
 
+        const createContact = async (newContact) => {
+          await fetch(urlContact, {
+              method: 'post',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(newContact)
+          })
+          getContactData();
+      }
+
         useEffect(() => {
             getContactData()
 
@@ -31,9 +42,12 @@ const ContactRoutes = () => {
 
   return (
     <div>
-    <ShowContact ContactData ={ContactData}/>
+    <ShowContact ContactData ={ContactData} createContact={createContact}/>
     </div>
   )
 }
+
+
+
 
 export default ContactRoutes
