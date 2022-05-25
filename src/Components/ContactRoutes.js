@@ -10,7 +10,7 @@ const ContactRoutes = () => {
     async function getContactData() {
         await fetch(urlContact).then((res) => res.json())
           .then((data) => {
-            console.log('Contact data insisde fetch funciton', data)
+            //console.log('Contact data insisde fetch funciton', data)
       
             setContactData(data)
           }).catch(console.error);

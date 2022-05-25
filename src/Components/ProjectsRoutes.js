@@ -10,7 +10,7 @@ const ProjectsRoutes = () => {
     async function getProjectsData() {
         await fetch(urlProjects).then((res) => res.json())
           .then((data) => {
-            console.log(' Projects data insisde fetch funciton', data)
+            //console.log(' Projects data insisde fetch funciton', data)
       
             setProjectsData(data)
           }).catch(console.error);

@@ -10,7 +10,7 @@ const UpdatesRoutes = () => {
     async function getUpdatesData() {
         await fetch(urlUpdates).then((res) => res.json())
           .then((data) => {
-            console.log(' Updates data insisde fetch funciton', data)
+            //console.log(' Updates data insisde fetch funciton', data)
       
             setUpdatesData(data)
           }).catch(console.error);

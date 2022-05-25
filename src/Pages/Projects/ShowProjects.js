@@ -5,7 +5,7 @@ import React from 'react'
 
 const ShowProjects= ({ProjectsData}) => {
 
-  console.log("props from showProjects",ProjectsData)
+  //console.log("props from showProjects",ProjectsData)
 
   const loadedProjects = () => {
     return ProjectsData.map((data) => (
