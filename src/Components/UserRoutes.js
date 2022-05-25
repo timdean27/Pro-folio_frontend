@@ -59,11 +59,17 @@ const UserRoutes = () => {
 
   return (
     <div>
-    <ShowUsers 
-    userData={userData}
-    createUser={createUser}
-    />
     <Routes>
+    <Route 
+          path= '/'
+                element={<ShowUsers 
+                  userData={userData}
+                  createUser={createUser}
+                
+                />}
+              />
+    
+    
             <Route 
                 path= '/user/:id'
                 element={<EditUsers 

@@ -30,7 +30,9 @@ const ProjectsRoutes = () => {
 
   return (
     <div>
-    <ShowProjects ProjectsData ={ProjectsData}/>
+    <Routes>
+    <Route path= '/'element={<ShowProjects ProjectsData ={ProjectsData}/>}/>
+    </Routes>
     </div>
   )
 }

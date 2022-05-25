@@ -43,7 +43,9 @@ async function getMarketingData() {
 
   return (
     <div>
-    <ShowMarketing MarketingData ={MarketingData} createMarketing={createMarketing}/>
+    <Routes>
+    <Route path= '/'element={<ShowMarketing MarketingData ={MarketingData} createMarketing={createMarketing}/>}/>
+    </Routes>
     </div>
   )
 }
