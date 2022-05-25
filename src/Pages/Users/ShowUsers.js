@@ -4,24 +4,25 @@ import React from 'react'
 
 const ShowUsers = ({userData,createUser}) => {
 
-  console.log("props from ShowUsers",userData)
-
+  //console.log("props from ShowUsers",userData)
     const [newUserForm, setnewUserForm] = useState({
       user:{
-          username: '',
-          profilePic: '',
-          password: ''
-      }
-  })
+        username: '',
+        profilePic: '',
+        password: ''
+    }
+    })
 
-  const handleChange = (event) => {
+    const handleChange = (event) => {
       setnewUserForm({
-        ...newUserForm,user:{
-                          ...newUserForm,[event.target.name]: event.target.value
-                        }
-        })
-      console.log(newUserForm)
+          user: {
+              ...newUserForm.user,
+              [event.target.name]: event.target.value
+          }
+      })
+      //console.log("handleChangeUser", newUserForm)
   }
+
 
   const handleSubmit = (event) => {
       event.preventDefault();
@@ -58,21 +59,21 @@ const ShowUsers = ({userData,createUser}) => {
     <form onSubmit={handleSubmit}>
         <input
             type='text'
-            value={newUserForm.username}
+            value={newUserForm.user.username}
             name='username'
             placeholder='username'
             onChange={handleChange}
         />
         <input
             type='text'
-            value={newUserForm.profilePic}
+            value={newUserForm.user.profilePic}
             name='profilePic'
             placeholder='profilePic'
             onChange={handleChange}
         />
         <input
             type='text'
-            value={newUserForm.password}
+            value={newUserForm.user.password}
             name='password'
             placeholder='password'
             onChange={handleChange}

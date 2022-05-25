@@ -8,7 +8,7 @@ const UserRoutes = () => {
     async function getUserData() {
         await fetch(urlUser).then((res) => res.json())
           .then((data) => {
-            console.log('User data insisde fetch funciton', data)
+            //console.log('User data insisde fetch funciton', data)
       
             setuserData(data)
           }).catch(console.error);
