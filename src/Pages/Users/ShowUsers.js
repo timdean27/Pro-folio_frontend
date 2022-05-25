@@ -40,7 +40,9 @@ const ShowUsers = ({userData,createUser}) => {
   const loadedUsers = () => {
     return userData.map((data) => (
             <div key={data._id} className='user'>
-              <p>{data.user.username}</p>
+            <Link to={`/user/${data._id}`}>
+            <p>{data.user.username}</p>
+            </Link>
               <p>{data.user.password}</p>
               <p>{data.user.profilePic}</p>
             </div>

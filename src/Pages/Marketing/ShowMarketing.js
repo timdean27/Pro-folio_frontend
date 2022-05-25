@@ -1,6 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import React from "react";
+import { useState } from "react";
 
 const ShowMarketing = ({ MarketingData, createMarketing }) => {
   console.log("props from ShowContact", MarketingData);
@@ -46,9 +45,11 @@ const ShowMarketing = ({ MarketingData, createMarketing }) => {
       </div>
     ));
   };
+
   const loadingMarketingData = () => {
     return <h1>Loading.........</h1>;
   };
+
   return (
     <div>
       <h1>ShowMarketing</h1>
@@ -68,7 +69,6 @@ const ShowMarketing = ({ MarketingData, createMarketing }) => {
           placeholder="linkedIn"
           onChange={handleChange}
         />
-
         <input
           type="text"
           value={newMarketingForm.Marketing_info.resume}
@@ -76,7 +76,6 @@ const ShowMarketing = ({ MarketingData, createMarketing }) => {
           placeholder="resume"
           onChange={handleChange}
         />
-
         <input
           type="text"
           value={newMarketingForm.Marketing_info.coverLetter}
@@ -89,4 +88,5 @@ const ShowMarketing = ({ MarketingData, createMarketing }) => {
     </div>
   );
 };
+
 export default ShowMarketing;

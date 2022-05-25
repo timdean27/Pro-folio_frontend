@@ -27,6 +27,7 @@ const MarketingRoutes = () => {
     });
     getMarketingData();
   };
+
   useEffect(() => {
     getMarketingData();
   }, []);

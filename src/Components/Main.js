@@ -4,7 +4,7 @@ import UserRoutes from './UserRoutes';
 import ProjectsRoutes from './ProjectsRoutes';
 import ContactRoutes from './ContactRoutes';
 import MarketingRoutes from './MarketingRoutes';
-
+import UpdatesRoutes from './UpdatesRoutes';
 
 const Main = () => {
 
@@ -15,6 +15,7 @@ const Main = () => {
       <ProjectsRoutes/>
       <ContactRoutes/>
       <MarketingRoutes/>
+      <UpdatesRoutes/>
       </div>
     );
   }
