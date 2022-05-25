@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import React from 'react'
 const ShowMarketing = ({MarketingData, createMarketing}) => {
-    console.log('props from ShowContact',MarketingData)
+    //console.log('props from ShowContact',MarketingData)
 
     const [newMarketingForm, setnewMarketingForm] = useState({
       Marketing_info: {
