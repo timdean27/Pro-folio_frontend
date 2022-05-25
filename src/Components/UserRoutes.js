@@ -1,5 +1,7 @@
 import React, { useState , useEffect} from 'react'
+import { Routes, Route } from 'react-router-dom';
 import ShowUsers from '../Pages/Users/ShowUsers';
+import EditUsers from '../Pages/Users/EditUsers';
 
 const UserRoutes = () => {
     const [userData, setuserData] = useState([])
@@ -25,6 +27,28 @@ const UserRoutes = () => {
             getUserData();
         }
 
+  const updateUser = async (user, id) => {
+        // make post request to create People
+        await fetch(urlUser + id, {
+            method: 'put',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        })
+        // Rerender the list of people
+        getUserData();
+    }
+
+    const deleteUser = async id => {
+        // make post request to create People
+        await fetch(urlUser + id, {
+            method: 'delete',
+        })
+        // Update the list
+        getUserData();
+    }
+
         useEffect(() => {
             getUserData()
 
@@ -44,6 +68,16 @@ const UserRoutes = () => {
     userData={userData}
     createUser={createUser}
     />
+    <Routes>
+            <Route 
+                path= '/:id'
+                element={<EditUsers 
+                userData={userData} 
+                updateUser={updateUser} 
+                deleteUser={deleteUser} 
+            />}
+                />
+        </Routes>
     </div>
   )
 }
