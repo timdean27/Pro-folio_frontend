@@ -10,7 +10,6 @@ const UserRoutes = () => {
     async function getUserData() {
         await fetch(urlUser).then((res) => res.json())
           .then((data) => {
-            //console.log('User data insisde fetch funciton', data)
       
             setuserData(data)
           }).catch(console.error);
@@ -28,7 +27,6 @@ const UserRoutes = () => {
         }
 
   const updateUser = async (user, id) => {
-        // make post request to create People
         await fetch(urlUser + id, {
             method: 'put',
             headers: {
@@ -36,16 +34,13 @@ const UserRoutes = () => {
             },
             body: JSON.stringify(user)
         })
-        // Rerender the list of people
         getUserData();
     }
 
     const deleteUser = async id => {
-        // make post request to create People
         await fetch(urlUser + id, {
             method: 'delete',
         })
-        // Update the list
         getUserData();
     }
 
@@ -70,7 +65,7 @@ const UserRoutes = () => {
     />
     <Routes>
             <Route 
-                path= '/:id'
+                path= '/user/:id'
                 element={<EditUsers 
                 userData={userData} 
                 updateUser={updateUser} 
