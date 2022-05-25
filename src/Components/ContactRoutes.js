@@ -42,7 +42,9 @@ const ContactRoutes = () => {
 
   return (
     <div>
-    <ShowContact ContactData ={ContactData} createContact={createContact}/>
+    <Routes>
+    <Route path= '/'element={<ShowContact ContactData ={ContactData} createContact={createContact}/>}/>
+    </Routes>
     </div>
   )
 }

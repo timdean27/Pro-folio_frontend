@@ -42,7 +42,9 @@ const UpdatesRoutes = () => {
 
   return (
     <div>
-    <ShowUpdates UpdatesData ={UpdatesData} createUpdates ={createUpdates }/>
+    <Routes>
+    <Route path= '/'element={<ShowUpdates UpdatesData ={UpdatesData} createUpdates ={createUpdates }/>}/>
+    </Routes>
     </div>
   )
 }
