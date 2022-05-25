@@ -1,7 +1,7 @@
 import React, { useState , useEffect} from 'react'
 import { Routes, Route} from 'react-router-dom';
 import ShowMarketing from '../Pages/Marketing/ShowMarketing';
-
+// test commit
 const MarketingRoutes = () => {
 
 const [MarketingData, setMarketingData] = useState([])
@@ -14,6 +14,18 @@ async function getMarketingData() {
 
       setMarketingData(data)
     }).catch(console.error);
+  }
+
+  const createMarketing = async (newMarketing) => {
+    await fetch(urlMarketing, {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newMarketing)
+    })
+    getMarketingData();
+
   }
   
   const createMarketing = async (newMarketing) => {

@@ -1,8 +1,17 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import React from 'react'
 const ShowMarketing = ({MarketingData, createMarketing}) => {
     console.log('props from ShowContact',MarketingData)
+
+    import React from 'react'
+    import { useState } from 'react'
+
+const ShowMarketing = ({MarketingData, createMarketing}) => {
+    console.log("props from ShowContact",MarketingData)
+
+
     const [newMarketingForm, setnewMarketingForm] = useState({
       Marketing_info: {
         gitHub: '',
@@ -11,6 +20,8 @@ const ShowMarketing = ({MarketingData, createMarketing}) => {
         coverLetter: '',
       }
     })
+
+
     const handleChange = (event) => {
       setnewMarketingForm({
           Marketing_info: {
@@ -19,6 +30,7 @@ const ShowMarketing = ({MarketingData, createMarketing}) => {
           }
       })
   }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     createMarketing(newMarketingForm);
@@ -30,6 +42,8 @@ const ShowMarketing = ({MarketingData, createMarketing}) => {
         coverLetter: '',
       }
     })
+  }
+
   }
     const loadedMarketingData = () => {
       return MarketingData.map((data) => (
@@ -50,28 +64,32 @@ const ShowMarketing = ({MarketingData, createMarketing}) => {
       <h1>ShowMarketing</h1>
       {MarketingData ? loadedMarketingData() : loadingMarketingData()}
       <form onSubmit={handleSubmit}>
-        <input
+
+        <input 
+
             type='text'
             value={newMarketingForm.Marketing_info.gitHub}
             name='gitHub'
             placeholder='gitHub'
             onChange={handleChange}
         />
-         <input
+         <input 
             type='text'
             value={newMarketingForm.Marketing_info.linkedIn}
             name='linkedIn'
             placeholder='linkedIn'
             onChange={handleChange}
         />
-         <input
+              
+         <input 
             type='text'
             value={newMarketingForm.Marketing_info.resume}
             name='resume'
             placeholder='resume'
             onChange={handleChange}
         />
-         <input
+
+         <input 
             type='text'
             value={newMarketingForm.Marketing_info.coverLetter}
             name='coverLetter'
