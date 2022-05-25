@@ -15,6 +15,18 @@ async function getMarketingData() {
       setMarketingData(data)
     }).catch(console.error);
   }
+
+  const createMarketing = async (newMarketing) => {
+    await fetch(urlMarketing, {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newMarketing)
+    })
+    getMarketingData();
+
+  }
   
     useEffect(() => {
 
@@ -32,7 +44,7 @@ async function getMarketingData() {
 
   return (
     <div>
-    <ShowMarketing MarketingData ={MarketingData}/>
+    <ShowMarketing MarketingData ={MarketingData} createMarketing={createMarketing}/>
     </div>
   )
 }
