@@ -1,0 +1,27 @@
+.userbody {
+    color: orangered;
+    background-color: bisque;
+    font-weight: bold;
+}
+
+/* 
+#navigation {
+    width: 350px;
+    margin: 0 auto;
+    background-color: lightgrey;
+    height: 50px;
+  
+  }
+  
+  ul {
+    list-style: none;
+    
+  }
+  
+  ul li {
+    text-decoration: none;
+    display: inline;
+    padding: 10px;
+    cursor: pointer;
+    line-height: 50px;
+  } */

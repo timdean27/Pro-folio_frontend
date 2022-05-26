@@ -1,7 +1,7 @@
 import React, { useState , useEffect} from 'react'
 import { Routes, Route } from 'react-router-dom';
 import ShowUsers from '../Pages/Users/ShowUsers';
-import EditUsers from '../Pages/Users/EditUsers';
+import EditUsers from '../Pages/Users/User.css';
 
 const UserRoutes = () => {
     const [userData, setuserData] = useState([])
@@ -58,7 +58,7 @@ const UserRoutes = () => {
               }
 
   return (
-    <div className="usercss">
+    <div className="userbody">
     <Routes>
     <Route 
           path= '/'

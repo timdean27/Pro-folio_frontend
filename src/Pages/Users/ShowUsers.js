@@ -39,6 +39,7 @@ const ShowUsers = ({userData,createUser}) => {
 
   const loadedUsers = () => {
     return userData.map((data) => (
+      
             <div key={data._id} className='user'>
             <Link to={`/user/${data._id}`}>
             <p>{data.user.username}</p>
@@ -56,7 +57,7 @@ const ShowUsers = ({userData,createUser}) => {
 
   return (
     <div>
-    <h1>ShowUsers</h1>
+    <h1>Users</h1>
     {userData ? loadedUsers() : loadingUsers()}
     <form onSubmit={handleSubmit}>
         <input
