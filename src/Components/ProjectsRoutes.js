@@ -28,8 +28,8 @@ const ProjectsRoutes = () => {
       }
 
       const updateProject = async (Project, id) => {
-        
-        await fetch(URL + id, {
+        console.log("PRINTING ID FROM UPDATE PROJECT FETCH", id)
+        await fetch(urlProjects + "/" + id, {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json',
