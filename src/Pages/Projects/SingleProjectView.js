@@ -7,9 +7,8 @@ const SingleProjectView = ({ProjectsData , updateProject}) => {
     const { id } = useParams()
     console.log("THIS IS THE IS",id)
     console.log("THIS IS THE ProjectsData",ProjectsData)
-    const projectCurrent = () =>{ return ProjectsData.map((projects)=>(
-    projects.find(project => project._id === id)
-    ))}
+    let projectCurrent = ProjectsData.find(project => project._id === id)
+
     
     console.log("projectCurrent",projectCurrent)
 
@@ -49,25 +48,28 @@ const SingleProjectView = ({ProjectsData , updateProject}) => {
 
   return (
     <div>SingleProjectView
+    <p>{projectCurrent.Description}</p>
+                  <p>{projectCurrent.image}</p>
+                  <p>{projectCurrent.shortVideo}</p>
     {ProjectsData ? loadedProjects() : loadingProjects()}
     <form onSubmit={handleSubmit}>
     <input
         type='text'
-        value={editProject.project.image}
+        value={editProject.image}
         name='image'
         placeholder='image URL'
         onChange={handleChange}
     />
     <input
         type='text'
-        value={editProject.project.shortVideo}
+        value={editProject.shortVideo}
         name='shortVideo'
         placeholder='shortVideo URL'
         onChange={handleChange}
     />
     <input
         type='text'
-        value={editProject.project.Description}
+        value={editProject.Description}
         name='Description'
         placeholder='Description'
         onChange={handleChange}
