@@ -58,7 +58,7 @@ const UserRoutes = () => {
               }
 
   return (
-    <div>
+    <div className="usercss">
     <Routes>
     <Route 
           path= '/'
