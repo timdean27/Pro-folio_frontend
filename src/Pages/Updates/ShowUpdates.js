@@ -1,15 +1,18 @@
+import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import React from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 
 const ShowUpdates = ({UpdatesData,createUpdates}) => {
-
+  const navigate = useNavigate()
+  const { id } = useParams()
+  console.log("THIS IS THE IS The Project ID printing on ShowUPdates page",id)
   //console.log("props from ShowUpdatess",UpdatesData)
     const [newUpdatesForm, setnewUpdatesForm] = useState({
       updates:{
         updateDescription: '',
         additions: '',
-        updatedAt: Date
+        updatedAt: new Date()
     }
     })
 
@@ -31,7 +34,7 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
         updates:{
             updateDescription: '',
             additions: '',
-            updatedAt: Date
+            updatedAt: new Date()
       }
       })
   }
@@ -54,7 +57,7 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
 
   return (
     <div>
-    <h1>ShowUpdatess</h1>
+    <h1>ShowUpdates</h1>
     {UpdatesData ? loadedUpdatess() : loadingUpdatess()}
     <form onSubmit={handleSubmit}>
         <input

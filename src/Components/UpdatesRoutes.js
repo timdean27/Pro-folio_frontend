@@ -41,9 +41,9 @@ const UpdatesRoutes = () => {
               }
 
   return (
-    <div className="updatingcss">
+    <div className="updatings">
     <Routes>
-    <Route path= '/'element={<ShowUpdates UpdatesData ={UpdatesData} createUpdates ={createUpdates }/>}/>
+    <Route path= '/Project/*'element={<ShowUpdates UpdatesData ={UpdatesData} createUpdates ={createUpdates }/>}/>
     </Routes>
     </div>
   )

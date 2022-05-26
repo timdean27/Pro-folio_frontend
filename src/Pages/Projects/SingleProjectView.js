@@ -5,7 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 const SingleProjectView = ({ProjectsData , updateProject}) => {
     const navigate = useNavigate()
     const { id } = useParams()
-    //console.log("THIS IS THE IS",id)
+    console.log("THIS IS THE IS",id)
     //console.log("THIS IS THE ProjectsData",ProjectsData)
     let projectCurrent = ProjectsData.find(project => project._id === id)
 
@@ -47,7 +47,7 @@ const SingleProjectView = ({ProjectsData , updateProject}) => {
       }
 
   return (
-    <div>SingleProjectView
+    <div><h1>SingleProjectView ID# :{projectCurrent._id}</h1>SingleProjectView
     {ProjectsData ? loadedProjects() : loadingProjects()}
     <form onSubmit={handleSubmit}>
     <input
