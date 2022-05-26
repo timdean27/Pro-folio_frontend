@@ -10,17 +10,23 @@
 } 
 
 
-.h1 {
-    
-}
+/* .h1 {
+
+} */
  .contact-container{
-    background-color: pink;
+    background-color: bisque;
     height: 100;
     padding: 4em;
     justify-content:space-around; 
  }
       
- 
+ h1{
+    font-weight:400;
+    padding-top:0;
+    margin-top:0;
+    font-family: 'Roboto Slab', serif;
+
+ }
 
 
  input {
