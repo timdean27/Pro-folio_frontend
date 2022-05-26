@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import ShowMarketing from "../Pages/Marketing/ShowMarketing";
+import SingleMarketingView from "../Pages/Marketing/SingleMarketingView";
 // test commit
 const MarketingRoutes = () => {
   const [MarketingData, setMarketingData] = useState([]);
@@ -28,6 +29,17 @@ const MarketingRoutes = () => {
     getMarketingData();
   };
 
+  const updateMarketing = async (Marketing, id) => {
+    await fetch(urlMarketing + "/" + id, {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(Marketing),
+    });
+    getMarketingData();
+  }
+
   useEffect(() => {
     getMarketingData();
   }, []);
@@ -42,10 +54,21 @@ const MarketingRoutes = () => {
 
   return (
     <div>
+      <Routes>
+        <Route
+          path="/Marketing/:id"
+          element={<SingleMarketingView 
+          MarketingData={MarketingData} 
+          updateMarketing={updateMarketing}  />}
+         /> 
+        <Route
+          path="/"
+          element={
       <ShowMarketing
         MarketingData={MarketingData}
-        createMarketing={createMarketing}
-      />
+        createMarketing={createMarketing}/>
+      }/>
+      </Routes>
     </div>
   );
 };

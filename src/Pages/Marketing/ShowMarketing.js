@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const ShowMarketing = ({ MarketingData, createMarketing }) => {
@@ -38,10 +39,12 @@ const ShowMarketing = ({ MarketingData, createMarketing }) => {
   const loadedMarketingData = () => {
     return MarketingData.map((data) => (
       <div key={data._id} className="user">
+        <Link to={`/marketing/${data._id}`}>
         <p>{data.Marketing_info.coverLetter}</p>
         <p>{data.Marketing_info.gitHub}</p>
         <p>{data.Marketing_info.linkedIn}</p>
         <p>{data.Marketing_info.resume}</p>
+        </Link>
       </div>
     ));
   };
