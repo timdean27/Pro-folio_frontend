@@ -12,7 +12,7 @@ const SingleMarketingView = ({ MarketingData, updateMarketing }) => {
   const handleChange = (event) => {
     setEditMarketing({
       Marketing_info: {
-        ...editMarketing.marketing,
+        ...editMarketing.Marketing_info,
         [event.target.name]: event.target.value,
       },
     });
