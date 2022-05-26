@@ -52,13 +52,10 @@ const ShowContact = ({ContactData, createContact}) => {
     }
   
     return (
-      <div className="contact-container">
-      <div id="Contacts">Contact</div>
-      <section id="contact-section"></section>
-      <div class="form-container flex"></div>
-      <div class="contact"></div>
-      <div class="form-box flex"></div>
-      <form method="POST" name="contact"></form>
+    <div className="contact-container">
+      <h1>Contact</h1>
+      <section id="contact-section"></section> 
+      <form method="POST" name="contact"></form> 
 
       {ContactData ? loadedContacts() : loadingContacts()}
       <form onSubmit={handleSubmit}>
