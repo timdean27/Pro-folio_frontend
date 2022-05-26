@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams, useNavigate } from 'react-router-dom'
 
+
+
 const ShowUpdates = ({UpdatesData,createUpdates}) => {
   const navigate = useNavigate()
   const { id } = useParams()
@@ -12,7 +14,9 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
       updates:{
         updateDescription: '',
         additions: '',
-        updatedAt: new Date()
+        comments:'',
+        updatedAt: new Date(),
+        projectID: id
     }
     })
 
@@ -32,9 +36,11 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
       createUpdates(newUpdatesForm);
       setnewUpdatesForm({
         updates:{
-            updateDescription: '',
-            additions: '',
-            updatedAt: new Date()
+          updateDescription: '',
+          additions: '',
+          comments:'',
+          updatedAt: new Date(),
+          projectID: id
       }
       })
   }
@@ -45,7 +51,9 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
             <div key={data._id} className='Updates'>
               <p>{data.updates.updateDescription}</p>
               <p>{data.updates.additions}</p>
+              <p>{data.updates.comments}</p>
               <p>{data.updates.updatedAt}</p>
+              <p>{data.updates.projectID}</p>
             </div>
         )
     )
@@ -72,6 +80,13 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
             value={newUpdatesForm.updates.additions}
             name='additions'
             placeholder='additions'
+            onChange={handleChange}
+        />
+        <input
+            type='text'
+            value={newUpdatesForm.updates.comments}
+            name='comments'
+            placeholder='comments'
             onChange={handleChange}
         />
         <input
