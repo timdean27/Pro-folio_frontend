@@ -5,12 +5,12 @@ import { useParams, useNavigate } from 'react-router-dom'
 const SingleProjectView = ({ProjectsData , updateProject}) => {
     const navigate = useNavigate()
     const { id } = useParams()
-    console.log("THIS IS THE IS",id)
-    console.log("THIS IS THE ProjectsData",ProjectsData)
+    //console.log("THIS IS THE IS",id)
+    //console.log("THIS IS THE ProjectsData",ProjectsData)
     let projectCurrent = ProjectsData.find(project => project._id === id)
 
     
-    console.log("projectCurrent",projectCurrent)
+    console.log("projectCurrent",projectCurrent.project.image)
 
     const [editProject, setEditProject] = useState(projectCurrent)
 
@@ -35,9 +35,9 @@ const SingleProjectView = ({ProjectsData , updateProject}) => {
     const loadedProjects = () => {
         return (
                 <div key={projectCurrent._id} className='Projects'>
-                  <p>{projectCurrent.Description}</p>
-                  <p>{projectCurrent.image}</p>
-                  <p>{projectCurrent.shortVideo}</p>
+                  <p>{projectCurrent.project.Description}</p>
+                  <p>{projectCurrent.project.image}</p>
+                  <p>{projectCurrent.project.shortVideo}</p>
                 </div>
             )
       }
@@ -48,28 +48,25 @@ const SingleProjectView = ({ProjectsData , updateProject}) => {
 
   return (
     <div>SingleProjectView
-    <p>{projectCurrent.Description}</p>
-                  <p>{projectCurrent.image}</p>
-                  <p>{projectCurrent.shortVideo}</p>
     {ProjectsData ? loadedProjects() : loadingProjects()}
     <form onSubmit={handleSubmit}>
     <input
         type='text'
-        value={editProject.image}
+        value={editProject.project.image}
         name='image'
         placeholder='image URL'
         onChange={handleChange}
     />
     <input
         type='text'
-        value={editProject.shortVideo}
+        value={editProject.project.shortVideo}
         name='shortVideo'
         placeholder='shortVideo URL'
         onChange={handleChange}
     />
     <input
         type='text'
-        value={editProject.Description}
+        value={editProject.project.Description}
         name='Description'
         placeholder='Description'
         onChange={handleChange}
