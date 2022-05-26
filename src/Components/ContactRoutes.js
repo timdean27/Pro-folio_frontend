@@ -1,6 +1,7 @@
 import React, { useState , useEffect} from 'react'
 import { Routes, Route} from 'react-router-dom';
 import ShowContact from '../Pages/Contact/ShowContact';
+import "../Contact.css";
 
 
 const ContactRoutes = () => {
@@ -41,7 +42,7 @@ const ContactRoutes = () => {
               }
 
   return (
-    <div>
+    <div className="contactbody">
     <Routes>
     <Route path= '/'element={<ShowContact ContactData ={ContactData} createContact={createContact}/>}/>
     </Routes>
