@@ -16,6 +16,29 @@ const ProjectsRoutes = () => {
           }).catch(console.error);
         }
 
+        const createProject = async (newProject) => {
+          await fetch(urlProjects, {
+              method: 'post',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(newProject)
+          })
+          getProjectsData();
+      }
+
+      const updateProject = async (Project, id) => {
+        
+        await fetch(URL + id, {
+            method: 'put',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(Project)
+        })
+        getProjectsData();
+    }
+
         useEffect(() => {
             getProjectsData()
             }, []);
@@ -34,11 +57,16 @@ const ProjectsRoutes = () => {
     <Route 
     path= '/Project/:id'
           element={<SingleProjectView
-              ProjectsData ={ProjectsData}/>}
+              ProjectsData ={ProjectsData} 
+              updateProject ={updateProject}/>}
           
         />
       
-    <Route path= '/'element={<ShowProjects ProjectsData ={ProjectsData}/>}/>
+    <Route path= '/'element={
+      <ShowProjects 
+      ProjectsData ={ProjectsData} 
+      createProject={createProject}/>
+          }/>
     </Routes>
     </div>
   )
