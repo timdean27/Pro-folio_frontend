@@ -39,9 +39,9 @@ const ShowContact = ({ContactData, createContact}) => {
     const loadedContacts = () => {
       return ContactData.map((data) => (
               <div key={data._id} className='user'>
-                <p>{data.reach_out_to_Dev.yourEmail}</p>
+                {/* <p>{data.reach_out_to_Dev.yourEmail}</p>
                 <p>{data.reach_out_to_Dev.yourName}</p>
-                <p>{data.reach_out_to_Dev.yourQuestion}</p>
+                <p>{data.reach_out_to_Dev.yourQuestion}</p> */}
               </div>
           )
       )
@@ -52,10 +52,17 @@ const ShowContact = ({ContactData, createContact}) => {
     }
   
     return (
-      <div>
-      <h1>ShowContact</h1>
+      <div className="contact-container">
+      <div id="Contacts">Contact</div>
+      <section id="contact-section"></section>
+      <div class="form-container flex"></div>
+      <div class="contact"></div>
+      <div class="form-box flex"></div>
+      <form method="POST" name="contact"></form>
+
       {ContactData ? loadedContacts() : loadingContacts()}
       <form onSubmit={handleSubmit}>
+
         <input
             type='text'
             value={newContactForm.reach_out_to_Dev.yourQuestion}
@@ -80,6 +87,7 @@ const ShowContact = ({ContactData, createContact}) => {
         <input type='submit' value='Create New Contact' />
     </form>
       </div>
+
     )
 }
 
