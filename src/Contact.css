@@ -1,3 +1,60 @@
 .contactbody{
+    height: 10vh;
+    text-align: center;
+    font-size: 2em;
+    padding: 2em 0;
+    color: white;
+    min-height:800px;
+
+
+}
+
+.contact-container{
     background-color: pink;
+    height: 100;
+    padding: 4em;
+    justify-content:space-around;
+    
+}
+
+
+input {
+    width: 100%;
+    margin: 7px 0px;
+    display: inline-block;
+    padding: 12px 25px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 1em;
+    font-family:inherit;
+    background:white;
+  }
+
+
+/* @media only screen and (max-width: 800px) */
+
+.form-box {
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke; 
+}
+
+h1{
+    font-weight:400;
+    padding-top:0;
+    margin-top:0;
+    font-family: 'Roboto Slab', serif;
+}
+
+.button {
+    background: rgb(237, 40, 70);
+    border-radius: 5px;
+    padding: 15px 25px;
+    display: inline-block;
+    margin: 10px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    box-shadow:0px 2px 5px rgb(0,0,0,0.5);
 }
