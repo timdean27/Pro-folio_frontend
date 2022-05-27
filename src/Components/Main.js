@@ -15,10 +15,12 @@ const Main = () => {
     return (
       <div className="App">
       <UserRoutes/>
+      <div className="ProjUpdates-container">
       <ProjectsRoutes/>
+      <UpdatesRoutes/>
+      </div>
       <ContactRoutes/>
       <MarketingRoutes/>
-      <UpdatesRoutes/>
       </div>
     );
   }
