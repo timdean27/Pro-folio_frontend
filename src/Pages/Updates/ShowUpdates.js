@@ -46,8 +46,17 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
   }
 
 
-  const loadedUpdatess = () => {
-    return UpdatesData.map((data) => (
+  const FilterUpdates = () => {
+    return (UpdatesData.filter((updates)=>{
+    if(updates.updates.projectID == id){
+      console.log("ID Matched", updates)
+      return updates
+    }
+    else{
+      console.log("ID Did Not Match", updates.updates.projectID, "id", id)
+      console.log("project ID type", typeof(updates.updates.projectID), "id type of ", typeof(id))
+    }
+    }).map((data) => (
             <div key={data._id} className='Updates'>
               <p>{data.updates.updateDescription}</p>
               <p>{data.updates.additions}</p>
@@ -57,16 +66,17 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
             </div>
         )
     )
-  }
-  
-  const loadingUpdatess = () => {
+  )}
+  console.log("FilterUpdates", FilterUpdates)
+
+  const loadingUpdates = () => {
     return <h1>Loading.........</h1>
   }
 
   return (
     <div>
     <h1>ShowUpdates</h1>
-    {UpdatesData ? loadedUpdatess() : loadingUpdatess()}
+    {UpdatesData ? FilterUpdates() : loadingUpdates()}
     <form onSubmit={handleSubmit}>
         <input
             type='text'
