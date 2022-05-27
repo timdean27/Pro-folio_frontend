@@ -38,7 +38,15 @@ const MarketingRoutes = () => {
       body: JSON.stringify(Marketing),
     });
     getMarketingData();
-  }
+  };
+
+  // delete marketing
+  const deleteMarketing = async (id) => {
+    await fetch(urlMarketing + "/" + id, {
+      method: "delete",
+    });
+    getMarketingData();
+  };
 
   useEffect(() => {
     getMarketingData();
@@ -57,17 +65,23 @@ const MarketingRoutes = () => {
       <Routes>
         <Route
           path="/Marketing/:id"
-          element={<SingleMarketingView 
-          MarketingData={MarketingData} 
-          updateMarketing={updateMarketing}  />}
-         /> 
+          element={
+            <SingleMarketingView
+              MarketingData={MarketingData}
+              updateMarketing={updateMarketing}
+              deleteMarketing={deleteMarketing}
+            />
+          }
+        />
         <Route
           path="/"
           element={
-      <ShowMarketing
-        MarketingData={MarketingData}
-        createMarketing={createMarketing}/>
-      }/>
+            <ShowMarketing
+              MarketingData={MarketingData}
+              createMarketing={createMarketing}
+            />
+          }
+        />
       </Routes>
     </div>
   );

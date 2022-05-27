@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const SingleMarketingView = ({ MarketingData, updateMarketing }) => {
+const SingleMarketingView = ({ MarketingData, updateMarketing, deleteMarketing }) => {
   const navigate = useNavigate();
   const { id } = useParams();
   let marketingCurrent = MarketingData.find(marketing => marketing._id === id);
@@ -24,6 +24,12 @@ const SingleMarketingView = ({ MarketingData, updateMarketing }) => {
 
     navigate("/");
   };
+
+  const handleDelete = (event) => {
+    event.preventDefault();
+    deleteMarketing(id);
+    navigate("/");
+  }
 
   const loadedMarketing = () => {
     return (
@@ -73,6 +79,7 @@ const SingleMarketingView = ({ MarketingData, updateMarketing }) => {
                 onChange={handleChange}
             />
             <input type="submit" value="Submit" />
+            <button onClick={handleDelete}>Delete</button>
         </form>
         </div>
     )
