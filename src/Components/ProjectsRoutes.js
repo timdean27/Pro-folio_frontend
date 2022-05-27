@@ -40,6 +40,15 @@ const ProjectsRoutes = () => {
         getProjectsData();
     }
 
+
+    const deleteProject = async id => {
+      await fetch(urlProjects + "/" + id, {
+          method: 'delete',
+      })
+      // Update the list
+      getProjectsData();
+  }
+
         useEffect(() => {
             getProjectsData()
             }, []);
@@ -59,7 +68,8 @@ const ProjectsRoutes = () => {
     path= '/Project/:id'
           element={<SingleProjectView
               ProjectsData ={ProjectsData} 
-              updateProject ={updateProject}/>}
+              updateProject ={updateProject}
+              deleteProject ={deleteProject}/>}
           
         />
       

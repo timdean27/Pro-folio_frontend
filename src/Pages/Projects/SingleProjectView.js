@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'
 
-const SingleProjectView = ({ProjectsData , updateProject}) => {
+const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
     const navigate = useNavigate()
     const { id } = useParams()
     console.log("THIS IS THE IS",id)
@@ -31,6 +31,11 @@ const SingleProjectView = ({ProjectsData , updateProject}) => {
 
         navigate('/')
     }
+
+    const DeleteProjectFunc = () => {
+        deleteProject(id)
+        navigate("/")
+      }
 
     const loadedProjects = () => {
         return (
@@ -73,6 +78,9 @@ const SingleProjectView = ({ProjectsData , updateProject}) => {
     />
     <input type='submit' value='Edit Project' />
     </form>
+    <button id="delete" onClick={DeleteProjectFunc}>
+            DELETE This Project{projectCurrent._id}
+          </button>
     </div>
   )
 }
