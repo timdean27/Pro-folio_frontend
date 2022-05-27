@@ -5,6 +5,9 @@ import ProjectsRoutes from './ProjectsRoutes';
 import ContactRoutes from './ContactRoutes';
 import MarketingRoutes from './MarketingRoutes';
 import UpdatesRoutes from './UpdatesRoutes';
+import "../ProjUpdate.css"
+
+
 
 const Main = () => {
 

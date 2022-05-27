@@ -57,7 +57,7 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
       console.log("project ID type", typeof(updates.updates.projectID), "id type of ", typeof(id))
     }
     }).map((data) => (
-            <div key={data._id} className='Updates'>
+            <div key={data._id} className='ShowUpdates-items-Container'>
               <p>{data.updates.updateDescription}</p>
               <p>{data.updates.additions}</p>
               <p>{data.updates.comments}</p>
@@ -74,9 +74,10 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
   }
 
   return (
-    <div>
+    <div className='Main-ShowUpdates-Container'>
     <h1>ShowUpdates</h1>
     {UpdatesData ? FilterUpdates() : loadingUpdates()}
+    <div className ="ShowUpdates-Forms-Container" >
     <form onSubmit={handleSubmit}>
         <input
             type='text'
@@ -108,6 +109,7 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
         />
         <input type='submit' value='Create New Updates' />
     </form>
+    </div>
     </div>
   )
 }
