@@ -62,7 +62,7 @@ const ProjectsRoutes = () => {
               }
 
   return (
-    <div>
+    
     <Routes>
     <Route 
     path= '/Project/:id'
@@ -79,7 +79,7 @@ const ProjectsRoutes = () => {
       createProject={createProject}/>
           }/>
     </Routes>
-    </div>
+    
   )
 }
 

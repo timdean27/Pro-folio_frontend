@@ -1,0 +1,59 @@
+.ProjUpdates-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;    
+}
+
+/* SingleProjects page CSS */
+.Main-SingleProject-Container{
+    display: flex;
+    flex-direction: column;
+    border: .5em solid blue;
+    padding-top: 20vh;
+    text-align: center;
+  }
+  
+  .SingleProject-items-Container{
+    border: .5em solid purple;
+
+  }
+  .SingleProject-Forms-Container{
+    border: .5em solid orange;
+  }
+  .SinglePoj-deleteBTN{
+    margin-right: 10vw;
+    margin-left: 10vw;
+    justify-content: center;
+  }
+
+/* ShowUpdates page CSS */
+.Main-ShowUpdates-Container{
+    display: flex;
+    flex-direction: column;
+    border: .5em solid red;
+}
+.ShowUpdates-items-Container{
+    border: .5em solid pink;
+
+}
+.ShowUpdates-Forms-Container{
+    border: .5em solid orange;
+}
+
+
+/*Show Project page css  */
+.Projects-HomePage-Container{
+    display: flex;
+    flex-direction: row;
+    border: .5em solid green;
+    text-align: center;
+    margin-top: 1vw;
+    
+}
+.ONEProj-HomePage-Container{
+    border: .5em solid green;
+    text-align: center;
+    margin-top: 1vw;
+    margin-right: 1vw;
+}

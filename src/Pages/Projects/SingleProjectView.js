@@ -1,6 +1,7 @@
 import React from 'react'
-import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'
+import { useState} from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom'
+
 
 const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
     const navigate = useNavigate()
@@ -29,21 +30,22 @@ const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
         event.preventDefault()
         updateProject(editProject, id)
 
-        navigate('/')
     }
 
     const DeleteProjectFunc = () => {
         deleteProject(id)
-        navigate("/")
+        
       }
 
     const loadedProjects = () => {
         return (
-                <div key={projectCurrent._id} className='Projects'>
-                  <p>{projectCurrent.project.Description}</p>
-                  <p>{projectCurrent.project.image}</p>
-                  <p>{projectCurrent.project.shortVideo}</p>
+          <a href="http://example.com">
+                <div key={projectCurrent._id} className='SingleProject-items-Container'>
+                <p>{projectCurrent.project.image}</p>
+                <p>{projectCurrent.project.shortVideo}</p>  
+                <p>{projectCurrent.project.Description}</p>
                 </div>
+          </a>
             )
       }
       
@@ -52,8 +54,10 @@ const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
       }
 
   return (
-    <div><h1>SingleProjectView ID# :{projectCurrent._id}</h1>SingleProjectView
+    <div className='Main-SingleProject-Container'>
+    <h1>SingleProjectView ID# :{projectCurrent._id}</h1>
     {ProjectsData ? loadedProjects() : loadingProjects()}
+    <div className='SingleProject-Forms-Container'>
     <form onSubmit={handleSubmit}>
     <input
         type='text'
@@ -78,7 +82,8 @@ const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
     />
     <input type='submit' value='Edit Project' />
     </form>
-    <button id="delete" onClick={DeleteProjectFunc}>
+    </div>
+    <button className="SinglePoj-deleteBTN" onClick={DeleteProjectFunc}>
             DELETE This Project{projectCurrent._id}
           </button>
     </div>
