@@ -1,7 +1,7 @@
 import React, { useState , useEffect} from 'react'
 import { Routes, Route} from 'react-router-dom';
 import ShowContact from '../Pages/Contact/ShowContact';
-import "../Pages/Contact/Contact.css";
+
 
 
 const ContactRoutes = () => {
