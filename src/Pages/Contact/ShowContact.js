@@ -1,6 +1,7 @@
 import React from 'react'
 // import { link } from 'react-router-dom';
 import { useState } from 'react'
+import "./Contact.css";
 
 const ShowContact = ({ContactData, createContact}) => {
     //console.log("props from ShowContact",ContactData)
