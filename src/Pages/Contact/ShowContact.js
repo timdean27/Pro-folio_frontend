@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 
 const ShowContact = ({ContactData, createContact}) => {
-    console.log("props from ShowContact",ContactData)
+    //console.log("props from ShowContact",ContactData)
 
     const [newContactForm, setnewContactForm] = useState({
       reach_out_to_Dev:{
