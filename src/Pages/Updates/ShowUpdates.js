@@ -57,6 +57,7 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
       console.log("project ID type", typeof(updates.updates.projectID), "id type of ", typeof(id))
     }
     }).map((data) => (
+      <Link to={`/Updates/${data._id}`}>
             <div key={data._id} className='ShowUpdates-items-Container'>
               <p>{data.updates.updateDescription}</p>
               <p>{data.updates.additions}</p>
@@ -64,6 +65,7 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
               <p>{data.updates.updatedAt}</p>
               <p>{data.updates.projectID}</p>
             </div>
+      </Link>
         )
     )
   )}
