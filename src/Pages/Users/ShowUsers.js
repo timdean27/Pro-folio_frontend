@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import React from 'react'
 
+
+
+
+
 const ShowUsers = ({userData,createUser}) => {
 
   //console.log("props from ShowUsers",userData)
@@ -56,8 +60,53 @@ const ShowUsers = ({userData,createUser}) => {
   }
 
   return (
+
+  
     <div>
+      
     <h1>Users</h1>
+
+
+
+
+
+    
+
+
+<nav class="option1">
+  <ul>
+    <li><a href="home">Home</a></li>
+    <li><a href="About">About</a></li>
+    <li><a href="Services">Services</a></li>
+    <li><a href="Contact">Contact</a></li>
+  </ul>
+</nav>
+<br /><br />
+<nav class="option2">
+  <ul>
+    <li><a href="home">Home</a></li>
+    <li><a href="About">About</a></li>
+    <li><a href="Services">Services</a></li>
+    <li><a href="Contact">Contact</a></li>
+  </ul>
+</nav>
+<br /><br />
+<nav class="option3">
+  <ul>
+    <li><a href="home">NAOMI</a></li>
+    <li><a href="About">TIMOTHY</a></li>
+    <li><a href="Services">JEROME</a></li>
+  </ul>
+</nav>
+
+
+
+
+
+
+
+
+    
     {userData ? loadedUsers() : loadingUsers()}
     <form onSubmit={handleSubmit}>
         <input
@@ -84,7 +133,12 @@ const ShowUsers = ({userData,createUser}) => {
         <input type='submit' value='Create New User' />
     </form>
     </div>
+    
   )
+
 }
+
+
+
 
 export default ShowUsers
