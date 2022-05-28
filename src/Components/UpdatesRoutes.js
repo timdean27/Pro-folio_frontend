@@ -1,6 +1,7 @@
 import React, { useState , useEffect} from 'react'
 import { Routes, Route} from 'react-router-dom';
 import ShowUpdates from '../Pages/Updates/ShowUpdates.js';
+import SingleUpdateView from '../Pages/Updates/SingleUpdateView';
 
 const UpdatesRoutes = () => {
 
@@ -27,7 +28,26 @@ const UpdatesRoutes = () => {
             })
             getUpdatesData();
         }
-
+        const editUpdate = async (Updates, id) => {
+          console.log("PRINTING ID FROM UPDATE Updates FETCH", id)
+          await fetch(urlUpdates + "/" + id, {
+              method: 'put',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(Updates)
+          })
+          getUpdatesData();
+      }
+  
+  
+      const deleteUpdate = async id => {
+        await fetch(urlUpdates + "/" + id, {
+            method: 'delete',
+        })
+        getUpdatesData();
+    }
+  
         useEffect(() => {
             getUpdatesData()
             }, []);
@@ -43,6 +63,14 @@ const UpdatesRoutes = () => {
   return (
     <div className="updatings">
     <Routes>
+    <Route
+          path= '/Updates/:id'
+                element={<SingleUpdateView
+                    UpdatesData ={UpdatesData} 
+                    editUpdate ={editUpdate}
+                    deleteUpdate ={deleteUpdate}/>}
+          
+        />
     <Route path= '/Project/:id'element={<ShowUpdates UpdatesData ={UpdatesData} createUpdates ={createUpdates }/>}/>
     </Routes>
     </div>

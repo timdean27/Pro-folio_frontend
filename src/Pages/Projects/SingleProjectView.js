@@ -6,12 +6,12 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
     const navigate = useNavigate()
     const { id } = useParams()
-    console.log("THIS IS THE IS",id)
+    //console.log("THIS IS THE IS From Projects Single",id)
     //console.log("THIS IS THE ProjectsData",ProjectsData)
     let projectCurrent = ProjectsData.find(project => project._id === id)
 
     
-    console.log("projectCurrent",projectCurrent.project.image)
+    //console.log("projectCurrent",projectCurrent.project.image)
 
     const [editProject, setEditProject] = useState(projectCurrent)
 
@@ -29,12 +29,12 @@ const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
     const handleSubmit = event => {
         event.preventDefault()
         updateProject(editProject, id)
-
+        navigate(`/Project/${id}`)
     }
 
     const DeleteProjectFunc = () => {
         deleteProject(id)
-        
+        navigate(`/`)
       }
 
     const loadedProjects = () => {

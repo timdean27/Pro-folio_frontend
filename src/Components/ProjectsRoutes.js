@@ -45,7 +45,6 @@ const ProjectsRoutes = () => {
       await fetch(urlProjects + "/" + id, {
           method: 'delete',
       })
-      // Update the list
       getProjectsData();
   }
 
