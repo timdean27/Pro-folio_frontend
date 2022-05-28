@@ -9,17 +9,17 @@
 .Main-SingleProject-Container{
     display: flex;
     flex-direction: column;
-    border: .5em solid blue;
+    border: .3em solid blue;
     padding-top: 20vh;
     text-align: center;
   }
   
   .SingleProject-items-Container{
-    border: .5em solid purple;
+    border: .3em solid purple;
 
   }
   .SingleProject-Forms-Container{
-    border: .5em solid orange;
+    border: .3em solid orange;
   }
   .SinglePoj-deleteBTN{
     margin-right: 10vw;
@@ -27,33 +27,39 @@
     justify-content: center;
   }
 
+/*Show Project page css  */
+.Projects-HomePage-Container{
+  display: flex;
+  flex-direction: row;
+  border: .3em solid green;
+  text-align: center;
+  margin-top: 1vw;
+  
+}
+.ONEProj-HomePage-Container{
+  border: .3em solid green;
+  text-align: center;
+  margin-top: 1vw;
+  margin-right: 1vw;
+}
+
+
 /* ShowUpdates page CSS */
 .Main-ShowUpdates-Container{
     display: flex;
     flex-direction: column;
-    border: .5em solid red;
+    border: .3em solid red;
 }
 .ShowUpdates-items-Container{
-    border: .5em solid pink;
+    border: .3em solid pink;
 
 }
 .ShowUpdates-Forms-Container{
-    border: .5em solid orange;
+    border: .3em solid orange;
+}
+#Update-Date{
+  float: right;
+  float: top;
+  border: .3em solid green;
 }
 
-
-/*Show Project page css  */
-.Projects-HomePage-Container{
-    display: flex;
-    flex-direction: row;
-    border: .5em solid green;
-    text-align: center;
-    margin-top: 1vw;
-    
-}
-.ONEProj-HomePage-Container{
-    border: .5em solid green;
-    text-align: center;
-    margin-top: 1vw;
-    margin-right: 1vw;
-}

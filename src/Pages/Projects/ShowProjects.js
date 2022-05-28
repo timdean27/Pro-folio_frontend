@@ -40,8 +40,8 @@ const handleSubmit = (event) => {
 
   const loadedProjects = () => {
     return ProjectsData.map((data) => (
-      <Link to={`/project/${data._id}`}>
-          <div key={data._id} className='ONEProj-HomePage-Container'>
+      <Link key={data._id} to={`/project/${data._id}`}>
+          <div  className='ONEProj-HomePage-Container'>
               <p>{data.project.Description}</p>
               <p>{data.project.image}</p>
               <p>{data.project.shortVideo}</p>

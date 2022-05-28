@@ -59,10 +59,10 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
     }).map((data) => (
       <Link to={`/Updates/${data._id}`}>
             <div key={data._id} className='ShowUpdates-items-Container'>
+              <p id="Update-Date">{data.updates.updatedAt}</p>
               <p>{data.updates.updateDescription}</p>
               <p>{data.updates.additions}</p>
               <p>{data.updates.comments}</p>
-              <p>{data.updates.updatedAt}</p>
               <p>{data.updates.projectID}</p>
             </div>
       </Link>
