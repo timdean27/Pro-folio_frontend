@@ -1,7 +1,9 @@
 import React, { useState , useEffect} from 'react'
 import { Routes, Route } from 'react-router-dom';
 import ShowUsers from '../Pages/Users/ShowUsers';
-import EditUsers from '../Pages/Users/User.css';
+import EditUsers from '../Pages/Users/EditUsers';
+import CreatUser from '../Pages/Users/CreatUser';
+import '../Pages/Users/User.css';
 
 const UserRoutes = () => {
     const [userData, setuserData] = useState([])
@@ -27,7 +29,7 @@ const UserRoutes = () => {
         }
 
   const updateUser = async (user, id) => {
-        await fetch(urlUser + id, {
+        await fetch(urlUser + "/" + id, {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,7 +40,7 @@ const UserRoutes = () => {
     }
 
     const deleteUser = async id => {
-        await fetch(urlUser + id, {
+        await fetch(urlUser + "/" + id, {
             method: 'delete',
         })
         getUserData();
@@ -60,26 +62,30 @@ const UserRoutes = () => {
   return (
     <div className="userbody">
 
-    <Routes>
-    <Route 
-          path= '/'
-                element={<ShowUsers 
-                  userData={userData}
-                  createUser={createUser}
-                
-                />}
-              />
-    
-    
+      <Routes>
+          <Route 
+            path= '/CreatUser'
+                  element={<CreatUser 
+                    userData={userData}
+                    createUser={createUser}
+                  
+                  />}
+          />
+          <Route 
+            path= '/'
+                  element={<ShowUsers 
+                    userData={userData}
+                  />}
+          />
             <Route 
-                path= '/user/:id'
-                element={<EditUsers 
-                userData={userData} 
-                updateUser={updateUser} 
-                deleteUser={deleteUser} 
-            />}
-                />
-        </Routes>
+                  path= '/user/:id'
+                  element={<EditUsers 
+                  userData={userData} 
+                  updateUser={updateUser} 
+                  deleteUser={deleteUser} 
+                  />}
+            />
+      </Routes>
     </div>
   )
 }
