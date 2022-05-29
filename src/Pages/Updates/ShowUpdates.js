@@ -69,7 +69,7 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
         )
     )
   )}
-  console.log("FilterUpdates", FilterUpdates)
+  
 
   const loadingUpdates = () => {
     return <h1>Loading.........</h1>

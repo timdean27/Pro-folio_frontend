@@ -5,9 +5,10 @@ import React from 'react'
 
 const ShowProjects= ({ProjectsData ,createProject}) => {
 
-  //console.log("props from showProjects",ProjectsData)
+  console.log("props from showProjects",ProjectsData)
   const [newProjectForm, setnewProjectForm] = useState({
     project:{
+      title:"",
       image:"",
       shortVideo:"",
       Description:""
@@ -28,6 +29,7 @@ const handleSubmit = (event) => {
   createProject(newProjectForm);
   setnewProjectForm({
     project:{
+      title:"",
       image:"",
       shortVideo:"",
       Description:""
@@ -42,9 +44,10 @@ const handleSubmit = (event) => {
     return ProjectsData.map((data) => (
       <Link key={data._id} to={`/project/${data._id}`}>
           <div  className='ONEProj-HomePage-Container'>
-              <p>{data.project.Description}</p>
-              <p>{data.project.image}</p>
-              <p>{data.project.shortVideo}</p>
+          <h3>{data.project.title}</h3>
+          <img src="" alt={data.project.title} />
+          <p>{data.project.Description}</p> 
+          <p>{data.project.shortVideo}</p>
           </div>
       </Link>
         )
@@ -60,6 +63,13 @@ const handleSubmit = (event) => {
     <h1>ShowProjects</h1>
     {ProjectsData ? loadedProjects() : loadingProjects()}
     <form onSubmit={handleSubmit}>
+    <input
+        type='text'
+        value={newProjectForm.project.title}
+        name='title'
+        placeholder='title'
+        onChange={handleChange}
+    />
     <input
         type='text'
         value={newProjectForm.project.image}
@@ -80,6 +90,13 @@ const handleSubmit = (event) => {
         name='Description'
         placeholder='Description'
         onChange={handleChange}
+    />
+    <input
+    type='text'
+    value={newProjectForm.project.appLink}
+    name='appLink'
+    placeholder='appLink'
+    onChange={handleChange}
     />
     <input type='submit' value='Create New Project' />
 </form>
