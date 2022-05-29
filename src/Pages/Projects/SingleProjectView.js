@@ -39,9 +39,10 @@ const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
 
     const loadedProjects = () => {
         return (
-          <a href="http://example.com">
+          <a href={projectCurrent.project.appLink}>
                 <div key={projectCurrent._id} className='SingleProject-items-Container'>
-                <p>{projectCurrent.project.image}</p>
+                <h3>{projectCurrent.project.title}</h3>
+                <img src="" alt={projectCurrent.project.title} />
                 <p>{projectCurrent.project.shortVideo}</p>  
                 <p>{projectCurrent.project.Description}</p>
                 </div>
@@ -59,6 +60,13 @@ const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
     {ProjectsData ? loadedProjects() : loadingProjects()}
     <div className='SingleProject-Forms-Container'>
     <form onSubmit={handleSubmit}>
+    <input
+        type='text'
+        value={editProject.project.title}
+        name='title'
+        placeholder='title'
+        onChange={handleChange}
+    />
     <input
         type='text'
         value={editProject.project.image}
@@ -79,6 +87,13 @@ const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
         name='Description'
         placeholder='Description'
         onChange={handleChange}
+    />
+    <input
+    type='text'
+    value={editProject.project.appLink}
+    name='appLink'
+    placeholder='appLink'
+    onChange={handleChange}
     />
     <input type='submit' value='Edit Project' />
     </form>
