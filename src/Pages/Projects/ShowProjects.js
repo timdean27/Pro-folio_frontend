@@ -12,13 +12,13 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
   const [VideoURLStore, setVideoURLStore] = useState("")
   const [ImageCloudDate, setImageCloudDate] = useState("")
   const [VideoCloudDate, setVideoCloudDate] = useState("")
+  
   const [newProjectForm, setnewProjectForm] = useState({
     project:{
       title:"",
-      image:"",
+      image:ImageURLStore,
       shortVideo:"",
-      Description:"",
-      appLink:""
+      Description:""
     }
   })
 
@@ -46,8 +46,8 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
     setImageURLStore(ImageUrlData.secure_url)
     // console.log('ImageUrlData' ,ImageUrlData)
     // console.log('ImageUrlData.secure_url' ,ImageUrlData.secure_url)
-     console.log('ImageCloudDate' ,ImageCloudDate)
-     console.log('ImageURLStore' ,ImageURLStore)
+    console.log('ImageCloudDate' ,ImageCloudDate)
+    console.log('ImageURLStore' ,ImageURLStore)
   }
   
   const handleVideoInput = async (files) =>{
@@ -72,8 +72,8 @@ const handleSubmit = (event) => {
       title:"",
       image:ImageURLStore,
       shortVideo:"",
-      Description:"",
-      appLink:""
+      Description:""
+      
     }
   })
 }
@@ -83,7 +83,7 @@ const handleSubmit = (event) => {
       <Link key={data._id} to={`/project/${data._id}`}>
           <div  className='ONEProj-HomePage-Container'>
           <h3>{data.project.title}</h3>
-          <img src={data.project.image} alt={data.project.title} />
+          <img src={data.project.image}alt={data.project.title} />
           <p>{data.project.Description}</p> 
           <p>{data.project.shortVideo}</p>
           </div>
@@ -109,7 +109,6 @@ const handleSubmit = (event) => {
     <button onClick={handleImageInput}>Upload Project Image</button>
     <input
     type="file"
-
     placeholder='shortVideo URL'
     onChange={(event) => {setVideoInput(event.target.files[0])}}
     />
@@ -118,6 +117,7 @@ const handleSubmit = (event) => {
     <form onSubmit={handleSubmit}>
     <input
         type='text'
+        value={newProjectForm.project.title}
         name='title'
         placeholder='title'
         onChange={handleChange}

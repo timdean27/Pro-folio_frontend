@@ -9,7 +9,15 @@ const ShowUsers = ({userData}) => {
     return userData.map((data) => (
       
             <div key={data._id} className='user'>
-            <Link to={`/user/${data._id}`}><h1>{data.user.profileName}</h1></Link>   
+              
+            <Link to={`/user/${data._id}`}>
+            <div className='Profile-Container' >
+            <h1>{data.user.profilePic}</h1> 
+            <h1>{data.user.profileName}</h1>
+            </div>
+            </Link>
+            <Link to={`/CreatUser`}>Creat new User</Link>
+            <div><h1>{data.user.about}</h1></div>
             </div>
         )
     )
@@ -20,37 +28,11 @@ const ShowUsers = ({userData}) => {
   }
 
   return (
-    <div> 
-      <nav>
+    <div>  
     {userData ? loadedUsers() : loadingUsers()}
-    <Link to={`/CreatUser`}>Create New User</Link>
-
-  <ul>
-    <li><a href="#flair">Flair</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#present">Present</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<section id="flair">
-  <h1>About</h1>
-</section>
-<section id="services">
-  <h1>Skills</h1>
-</section>
-<section id="present">
-  <h1>Projects</h1>
-</section>
-<section id="contact">
-  <h1>Contact</h1>
-</section>
-</div>
- 
-
-
+    
+    </div>
   )
-
 
 }
 

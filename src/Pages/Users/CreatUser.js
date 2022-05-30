@@ -8,6 +8,7 @@ const CreatUser = ({userData,createUser}) => {
     user:{
       username: '',
       profileName: '',
+      about: '',
       profilePic: '',
       password: ''
   }
@@ -31,6 +32,7 @@ const handleSubmit = (event) => {
       user:{
         username: '',
         profileName: '',
+        about: '',
         profilePic: '',
         password: ''
     }
@@ -46,6 +48,7 @@ const loadedUsers = () => {
           <p>{data.user.profileName}</p>
           </Link>
             <p>{data.user.username}</p>
+            <p>{data.user.about}</p>
             <p>{data.user.password}</p>
             <p>{data.user.profilePic}</p>
           </div>
@@ -74,6 +77,13 @@ const loadingUsers = () => {
             value={newUserForm.user.profileName}
             name='profileName'
             placeholder='profileName'
+            onChange={handleChange}
+        />
+        <input
+            type='text'
+            value={newUserForm.user.about}
+            name='about'
+            placeholder='about'
             onChange={handleChange}
         />
         <input

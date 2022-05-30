@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import "./Marketing.css";
+import "../../Styles/Marketing.css";
 
 const ShowMarketing = ({ MarketingData, createMarketing }) => {
   //console.log("props from ShowContact", MarketingData);
@@ -39,7 +39,6 @@ const ShowMarketing = ({ MarketingData, createMarketing }) => {
 
   const loadedMarketingData = () => {
     return MarketingData.map((data) => (
-      <>
         <div key={data._id} className="marketing">
           <ul>
             <li>
@@ -67,7 +66,6 @@ const ShowMarketing = ({ MarketingData, createMarketing }) => {
             <button className="btn-edit-marketing">Ediit</button>
           </Link>
         </div>
-      </>
     ));
   };
 
