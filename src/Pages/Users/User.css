@@ -2,10 +2,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
   } 
   
   html {
     scroll-behavior: smooth;
+    
   }
   
   section {
@@ -23,6 +25,7 @@
     width: 100%;
     background: rgba(0,0,0,.7);
     margin: 0;
+    
   } 
 
     ul {
@@ -35,6 +38,12 @@
        height: 100px;
       display: flex;
       align-items: center;
+      font-weight: 700;
+	 transition: .2s ease-in-out all;
+	 border: 1px solid yellow;
+	 padding: 1em;
+      
+      
     }
     
      a {
