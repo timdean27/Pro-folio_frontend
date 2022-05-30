@@ -1,10 +1,10 @@
 .contactbody{
-    height: 10vh;
+    height: 1vh;
     text-align: center;
     font-size: 2em;
-    padding: 2em 0;
+    padding: 0em 0;
     color: white;
-    min-height:800px;
+    min-height:400px;
 
 
 } 
@@ -13,15 +13,15 @@
 /* .h1 {
 
 } */
- .contact-container{
-    background-color: rgb(238, 86, 15);
-    height: 100;
-    padding: 4em;
+  .contact-container{
+    background-color: rgb(55, 86, 15);
+     height: 70; 
+    padding: 1em;
     justify-content:space-around; 
- }
+ } 
       
  h1{
-    font-weight:400;
+    font-weight:200;
     padding-top:0;
     margin-top:0;
     font-family: 'Roboto Slab', serif;
@@ -30,12 +30,12 @@
 
 
  input {
-    width: 100%;
+    width: 58%;
     margin: 7px 0px;
     display: inline-block;
-    padding: 12px 25px;
+    padding: 9px 20px;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 2px;
     border: 1px solid lightgrey;
     font-size: 1em;
     font-family:inherit;

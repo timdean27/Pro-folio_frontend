@@ -1,8 +1,8 @@
-* {
+  * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
+  } 
   
   html {
     scroll-behavior: smooth;
@@ -10,21 +10,20 @@
   
   section {
     scroll-margin-top: 100px;
-     
-    height: 100vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  nav {
+   nav {
     position: fixed;
     top: 0;
     height: 100px;
     width: 100%;
     background: rgba(0,0,0,.7);
     margin: 0;
-  }
+  } 
 
     ul {
       margin: 0;
@@ -33,19 +32,19 @@
     }
     
     li {
-      height: 100px;
+       height: 100px;
       display: flex;
       align-items: center;
     }
     
-    a {
+     a {
       color: #fff;
       text-decoration: none;
       text-transform: uppercase;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 2em;
       padding: 15px 30px;
-    }
+    } 
       hover {
         color: orange;
       }
@@ -66,7 +65,7 @@
   
   #contact {
     background: #FFC300;
-  }
+  } 
   
   
 
@@ -75,4 +74,4 @@
 
 
 
-  
+    
