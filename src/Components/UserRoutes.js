@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import ShowUsers from '../Pages/Users/ShowUsers';
 import EditUsers from '../Pages/Users/EditUsers';
 import CreatUser from '../Pages/Users/CreatUser';
-import '../Pages/Users/User.css';
+import '../Styles/User.css';
 
 const UserRoutes = () => {
     const [userData, setuserData] = useState([])

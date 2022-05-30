@@ -30,7 +30,7 @@ const SingleUpdateView = ({UpdatesData , editUpdate , deleteUpdate}) => {
     const DeleteUpdateFunc = () => {
         deleteUpdate(id)
         navigate(`/Project/${UpdateCurrent.updates.projectID}`)
-        
+        navigate('/')
       }
 
     const loadedUpdates = () => {

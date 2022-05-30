@@ -40,6 +40,7 @@ const EditUsers = ({userData , updateUser , deleteUser}) => {
               <p>You clicked on user id: {userCurrent._id}</p>
               <p>{userCurrent.user.username}</p>
               <p>{userCurrent.user.profileName}</p>
+              <p>{userCurrent.user.about}</p>
               <p>{userCurrent.user.password}</p>
               <p>{userCurrent.user.profilePic}</p>
             </div>
@@ -71,6 +72,13 @@ const EditUsers = ({userData , updateUser , deleteUser}) => {
             placeholder='profileName'
             onChange={handleChange}
         />
+        <input
+        type='text'
+        value={edituser.user.about}
+        name='about'
+        placeholder='about'
+        onChange={handleChange}
+    />
     <input
         type='text'
         value={edituser.user.profilePic}
