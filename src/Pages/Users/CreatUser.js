@@ -21,7 +21,7 @@ const CreatUser = ({userData,createUser}) => {
             [event.target.name]: event.target.value
         }
     })
-    //console.log("handleChangeUser", newUserForm)
+
 }
 
 
