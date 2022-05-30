@@ -45,8 +45,8 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
     setImageURLStore(ImageUrlData.secure_url)
     // console.log('ImageUrlData' ,ImageUrlData)
     // console.log('ImageUrlData.secure_url' ,ImageUrlData.secure_url)
-    // console.log('ImageCloudDate' ,ImageCloudDate)
-    // console.log('ImageURLStore' ,ImageURLStore)
+     console.log('ImageCloudDate' ,ImageCloudDate)
+     console.log('ImageURLStore' ,ImageURLStore)
   }
   
   const handleVideoInput = async (files) =>{
