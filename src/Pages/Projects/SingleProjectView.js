@@ -39,7 +39,7 @@ const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
 
     const loadedProjects = () => {
         return (
-          <a href={projectCurrent.project.appLink}>
+          <a href={projectCurrent.project.appLink} target="_blank">
                 <div key={projectCurrent._id} className='SingleProject-items-Container'>
                 <h3>{projectCurrent.project.title}</h3>
                 <img src="" alt={projectCurrent.project.title} />

@@ -6,15 +6,22 @@ import React from 'react'
 const ShowProjects= ({ProjectsData ,createProject}) => {
 
   console.log("props from showProjects",ProjectsData)
+  const [ImageInput, setImageInput] = useState("")
+  const [VideoInput, setVideoInput] = useState("")
+  const [ImageURLStore, setImageURLStore] = useState("")
+  const [VideoURLStore, setVideoURLStore] = useState("")
+  const [ImageCloudDate, setImageCloudDate] = useState("")
+  const [VideoCloudDate, setVideoCloudDate] = useState("")
   const [newProjectForm, setnewProjectForm] = useState({
     project:{
       title:"",
-      image:"",
+      image:ImageURLStore,
       shortVideo:"",
       Description:""
-      
     }
   })
+
+
   const handleChange = (event) => {
     setnewProjectForm({
         project: {
@@ -24,21 +31,51 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
     })
 }
 
+
+  const handleImageInput = async (files) =>{
+    files.preventDefault()
+    const formData = new FormData();
+    formData.append("file" , ImageInput)
+    formData.append('upload_preset', 'GAproject3');
+    const ImageUrlData = await fetch(`https://api.cloudinary.com/v1_1/dtonselel/image/upload`,
+    {method: 'post', body:formData}
+    ).then((response) =>response.json()) 
+
+    setImageCloudDate(ImageUrlData)
+    setImageURLStore(ImageUrlData.secure_url)
+    // console.log('ImageUrlData' ,ImageUrlData)
+    // console.log('ImageUrlData.secure_url' ,ImageUrlData.secure_url)
+    // console.log('ImageCloudDate' ,ImageCloudDate)
+    // console.log('ImageURLStore' ,ImageURLStore)
+  }
+  
+  const handleVideoInput = async (files) =>{
+     files.preventDefault()
+    const formData = new FormData();
+    formData.append("file" , VideoInput)
+    formData.append('upload_preset', 'GAproject3');
+    const VideoUrlData = await fetch(`https://api.cloudinary.com/v1_1/dtonselel/image/upload`,
+    {method: 'post', body:formData}
+    ).then((response) =>response.json()) 
+    
+    setVideoCloudDate(VideoUrlData)
+    setVideoURLStore(VideoUrlData.secure_url)
+  }
+ 
+
 const handleSubmit = (event) => {
   event.preventDefault();
   createProject(newProjectForm);
   setnewProjectForm({
     project:{
       title:"",
-      image:"",
+      image:ImageURLStore,
       shortVideo:"",
       Description:""
       
     }
   })
 }
-
-
 
   const loadedProjects = () => {
     return ProjectsData.map((data) => (
@@ -62,26 +99,30 @@ const handleSubmit = (event) => {
     <div className='Projects-HomePage-Container'>
     <h1>ShowProjects</h1>
     {ProjectsData ? loadedProjects() : loadingProjects()}
+
+    <input
+    type="file"
+    value={newProjectForm.project.image}
+    name='image'
+    placeholder='image URL'
+    onChange={(event) => {setImageInput(event.target.files[0])}}
+    />
+    <button onClick={handleImageInput}>Upload Project Image</button>
+    <input
+    type="file"
+    value={newProjectForm.project.shortVideo}
+    name='shortVideo'
+    placeholder='shortVideo URL'
+    onChange={(event) => {setVideoInput(event.target.files[0])}}
+    />
+    <button onClick={handleVideoInput}>Upload Short Video of Project</button>
+
     <form onSubmit={handleSubmit}>
     <input
         type='text'
         value={newProjectForm.project.title}
         name='title'
         placeholder='title'
-        onChange={handleChange}
-    />
-    <input
-        type='text'
-        value={newProjectForm.project.image}
-        name='image'
-        placeholder='image URL'
-        onChange={handleChange}
-    />
-    <input
-        type='text'
-        value={newProjectForm.project.shortVideo}
-        name='shortVideo'
-        placeholder='shortVideo URL'
         onChange={handleChange}
     />
     <input
