@@ -54,8 +54,8 @@ const ShowContact = ({ContactData, createContact}) => {
   
     return (
     <div className="contact-container">
-      <h1>Contact</h1>
-      <section id="contact-section"></section>
+      <h2>Contact</h2>
+      <div id="contact-section"></div>
       {ContactData ? loadedContacts() : loadingContacts()}
       <form onSubmit={handleSubmit}>
 

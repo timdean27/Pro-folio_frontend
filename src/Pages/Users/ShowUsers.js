@@ -20,13 +20,11 @@ const ShowUsers = ({userData}) => {
   }
 
   return (
-    <div>  
+    <div> 
+      <nav>
     {userData ? loadedUsers() : loadingUsers()}
-    <Link to={`/CreatUser`}>Creat new User</Link>
-    
-       
+    <Link to={`/CreateUser`}>Create New User</Link>
 
-<nav>
   <ul>
     <li><a href="#flair">Flair</a></li>
     <li><a href="#services">Services</a></li>
