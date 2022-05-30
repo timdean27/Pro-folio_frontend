@@ -1,7 +1,7 @@
 import React from 'react'
 // import { link } from 'react-router-dom';
 import { useState } from 'react'
-import "./Contact.css";
+import "../../Styles/Contact.css";
 
 const ShowContact = ({ContactData, createContact}) => {
     //console.log("props from ShowContact",ContactData)
@@ -54,8 +54,8 @@ const ShowContact = ({ContactData, createContact}) => {
   
     return (
     <div className="contact-container">
-      <h1>Contact</h1>
-      <section1 id="contact-section"></section1>
+      <h1 className="contact-header">Contact</h1>
+      <section id="contact-section"></section>
       {ContactData ? loadedContacts() : loadingContacts()}
       <form onSubmit={handleSubmit}>
 
