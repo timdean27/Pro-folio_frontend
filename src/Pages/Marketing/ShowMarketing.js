@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import "./Marketing.css";
 
 const ShowMarketing = ({ MarketingData, createMarketing }) => {
   //console.log("props from ShowContact", MarketingData);
@@ -38,14 +39,35 @@ const ShowMarketing = ({ MarketingData, createMarketing }) => {
 
   const loadedMarketingData = () => {
     return MarketingData.map((data) => (
-      <div key={data._id} className="user">
-        <Link to={`/marketing/${data._id}`}>
-        <p>{data.Marketing_info.coverLetter}</p>
-        <p>{data.Marketing_info.gitHub}</p>
-        <p>{data.Marketing_info.linkedIn}</p>
-        <p>{data.Marketing_info.resume}</p>
-        </Link>
-      </div>
+      <>
+        <div key={data._id} className="marketing">
+          <ul>
+            <li>
+              <a href={data.Marketing_info.gitHub} target="_blank"rel="noreferrer">
+              <i className="fa-brands fa-github github">GitHub</i>
+              </a>
+            </li>
+            <li>
+              <a href={data.Marketing_info.linkedIn}>
+              <i className="fa-brands fa-linkedin linkedin">Linkedin</i>
+              </a>
+            </li>
+            <li>
+              <a href={data.Marketing_info.Resume}>
+              <i className="fa-solid fa-file resume">Resume</i>
+              </a>
+            </li>
+            <li>
+              <a href={data.Marketing_info.coverLetter}>
+              <i className="fa-solid fa-envelope coverletter">Cover Letter</i>
+              </a>
+            </li>
+          </ul>
+          <Link to={`/marketing/${data._id}`}>
+            <button className="btn-edit-marketing">Ediit</button>
+          </Link>
+        </div>
+      </>
     ));
   };
 
