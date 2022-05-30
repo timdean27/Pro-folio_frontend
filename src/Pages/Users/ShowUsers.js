@@ -24,33 +24,35 @@ const ShowUsers = ({userData}) => {
     {userData ? loadedUsers() : loadingUsers()}
     <Link to={`/CreatUser`}>Creat new User</Link>
     
-        <nav className="option1">
-          <ul>
-            <li><a href="home">Home</a></li>
-            <li><a href="About">About</a></li>
-            <li><a href="Services">Services</a></li>
-            <li><a href="Contact">Contact</a></li>
-          </ul>
-        </nav>
-      <br /><br />
-      <nav className="option2">
-        <ul>
-          <li><a href="home">Home</a></li>
-          <li><a href="About">About</a></li>
-          <li><a href="Services">Services</a></li>
-          <li><a href="Contact">Contact</a></li>
-        </ul>
-      </nav>
-      <br /><br />
-      <nav className="option3">
-        <ul>
-          <li><a href="home">NAOMI</a></li>
-          <li><a href="About">TIMOTHY</a></li>
-          <li><a href="Services">JEROME</a></li>
-        </ul>
-      </nav>
-    </div>
+       
+
+<nav>
+  <ul>
+    <li><a href="#flair">Flair</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#present">Present</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="flair">
+  <h1>About</h1>
+</section>
+<section id="services">
+  <h1>Skills</h1>
+</section>
+<section id="present">
+  <h1>Projects</h1>
+</section>
+<section id="contact">
+  <h1>Contact</h1>
+</section>
+</div>
+ 
+
+
   )
+
 
 }
 
