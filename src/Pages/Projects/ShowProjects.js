@@ -15,9 +15,10 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
   const [newProjectForm, setnewProjectForm] = useState({
     project:{
       title:"",
-      image:ImageURLStore,
+      image:"",
       shortVideo:"",
-      Description:""
+      Description:"",
+      appLink:""
     }
   })
 
@@ -71,8 +72,8 @@ const handleSubmit = (event) => {
       title:"",
       image:ImageURLStore,
       shortVideo:"",
-      Description:""
-      
+      Description:"",
+      appLink:""
     }
   })
 }
@@ -82,7 +83,7 @@ const handleSubmit = (event) => {
       <Link key={data._id} to={`/project/${data._id}`}>
           <div  className='ONEProj-HomePage-Container'>
           <h3>{data.project.title}</h3>
-          <img src="" alt={data.project.title} />
+          <img src={data.project.image} alt={data.project.title} />
           <p>{data.project.Description}</p> 
           <p>{data.project.shortVideo}</p>
           </div>
@@ -102,16 +103,13 @@ const handleSubmit = (event) => {
 
     <input
     type="file"
-    value={newProjectForm.project.image}
-    name='image'
     placeholder='image URL'
     onChange={(event) => {setImageInput(event.target.files[0])}}
     />
     <button onClick={handleImageInput}>Upload Project Image</button>
     <input
     type="file"
-    value={newProjectForm.project.shortVideo}
-    name='shortVideo'
+
     placeholder='shortVideo URL'
     onChange={(event) => {setVideoInput(event.target.files[0])}}
     />
@@ -120,7 +118,6 @@ const handleSubmit = (event) => {
     <form onSubmit={handleSubmit}>
     <input
         type='text'
-        value={newProjectForm.project.title}
         name='title'
         placeholder='title'
         onChange={handleChange}
