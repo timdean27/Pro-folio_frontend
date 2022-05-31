@@ -14,7 +14,12 @@ const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
     //console.log("projectCurrent",projectCurrent.project.image)
 
 const [editProject, setEditProject] = useState(projectCurrent)
-
+const [ImageInput, setImageInput] = useState("")
+const [VideoInput, setVideoInput] = useState("")
+const [ImageURLStore, setImageURLStore] = useState("")
+const [VideoURLStore, setVideoURLStore] = useState("")
+const [ImageCloudDate, setImageCloudDate] = useState("")
+const [VideoCloudDate, setVideoCloudDate] = useState("")
 
 
 const handleChange = (event) => {
@@ -35,6 +40,56 @@ const handleSubmit = event => {
 const DeleteProjectFunc = () => {
   deleteProject(id)
   navigate(`/`)
+}
+
+
+
+const handleImageInput = async (files) =>{
+  files.preventDefault()
+  const formData = new FormData();
+  formData.append("file" , ImageInput)
+  formData.append('upload_preset', 'GAproject3');
+  const ImageUrlData = await fetch(`https://api.cloudinary.com/v1_1/dtonselel/image/upload`,
+  {method: 'post', body:formData}
+  ).then((response) =>response.json()) 
+
+  setImageCloudDate(ImageUrlData)
+  setImageURLStore(ImageUrlData.url)
+  // console.log('ImageUrlData' ,ImageUrlData)
+  // console.log('ImageUrlData.secure_url' ,ImageUrlData.secure_url)
+  console.log('ImageCloudDate' ,ImageCloudDate)
+  console.log('ImageURLStore' ,ImageURLStore)
+
+  setEditProject({
+    project: {
+        ...editProject.project,
+        image: ImageURLStore
+    }
+})
+
+}
+
+const handleVideoInput = async (files) =>{
+   files.preventDefault()
+  const formData = new FormData();
+  formData.append("file" , VideoInput)
+  formData.append('upload_preset', 'GAproject3');
+  const VideoUrlData = await fetch(`https://api.cloudinary.com/v1_1/dtonselel/image/upload`,
+  {method: 'post', body:formData}
+  ).then((response) =>response.json()) 
+  
+  setVideoCloudDate(VideoUrlData)
+  setVideoURLStore(VideoUrlData.url)
+  console.log('VideoCloudDate' ,VideoCloudDate)
+  console.log('VideoURLStore' ,VideoURLStore)
+  
+  setEditProject({
+    project: {
+        ...editProject.project,
+        image: VideoURLStore
+    }
+})
+
 }
 
 const loadedProjects = () => {
@@ -68,6 +123,18 @@ return (
     {ProjectsData ? loadedProjects() : loadingProjects()}
     <div className='SingleProject-Forms-Container'>
     <form onSubmit={handleSubmit}>
+    <input
+    type="file"
+    placeholder='image URL'
+    onChange={(event) => {setImageInput(event.target.files[0])}}
+    />
+    <button onClick={handleImageInput}>Upload Project Image</button>
+    <input
+    type="file"
+    placeholder='shortVideo URL'
+    onChange={(event) => {setVideoInput(event.target.files[0])}}
+    />
+    <button onClick={handleVideoInput}>Upload Short Video of Project</button>
     <input
         type='text'
         value={editProject.project.title}

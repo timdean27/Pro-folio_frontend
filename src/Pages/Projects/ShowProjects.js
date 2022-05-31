@@ -12,12 +12,14 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
   const [VideoURLStore, setVideoURLStore] = useState("")
   const [ImageCloudDate, setImageCloudDate] = useState("")
   const [VideoCloudDate, setVideoCloudDate] = useState("")
+  
   const [newProjectForm, setnewProjectForm] = useState({
     project:{
       title:"",
       image:ImageURLStore,
-      shortVideo:"",
-      Description:""
+      shortVideo:VideoURLStore,
+      Description:"",
+      appLink:""
     }
   })
 
@@ -47,6 +49,13 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
     // console.log('ImageUrlData.secure_url' ,ImageUrlData.secure_url)
     console.log('ImageCloudDate' ,ImageCloudDate)
     console.log('ImageURLStore' ,ImageURLStore)
+
+    setnewProjectForm({
+      project: {
+          ...newProjectForm.project,
+          image: ImageURLStore
+      }
+  })
   }
   
   const handleVideoInput = async (files) =>{
@@ -62,6 +71,13 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
     setVideoURLStore(VideoUrlData.url)
     console.log('VideoCloudDate' ,VideoCloudDate)
     console.log('VideoURLStore' ,VideoURLStore)
+
+    setnewProjectForm({
+      project: {
+          ...newProjectForm.project,
+          image: VideoURLStore
+      }
+  })
   }
  
 
@@ -71,9 +87,10 @@ const handleSubmit = (event) => {
   setnewProjectForm({
     project:{
       title:"",
-      image:ImageURLStore,
+      image:"",
       shortVideo:"",
-      Description:""
+      Description:"",
+      appLink:""
       
     }
   })
@@ -102,6 +119,7 @@ const handleSubmit = (event) => {
     <h1>ShowProjects</h1>
     {ProjectsData ? loadedProjects() : loadingProjects()}
 
+    <form onSubmit={handleSubmit}>
     <input
     type="file"
     placeholder='image URL'
@@ -114,8 +132,6 @@ const handleSubmit = (event) => {
     onChange={(event) => {setVideoInput(event.target.files[0])}}
     />
     <button onClick={handleVideoInput}>Upload Short Video of Project</button>
-
-    <form onSubmit={handleSubmit}>
     <input
         type='text'
         value={newProjectForm.project.title}
