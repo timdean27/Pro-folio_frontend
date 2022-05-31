@@ -17,28 +17,29 @@ const Main = () => {
       <div className="App">
           <nav className="Nav-option1">
           <ul>
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#Projects">Projects</a></li>
-            <li><a href="#Marketing">Marketing</a></li>
-            <li><a href="#Contact">Contact</a></li>
+          <li><a href="#Home-Scroll">Home</a></li>
+          <li><a href="#About-Scroll">About</a></li>
+          <li><a href="#Projects-Scroll">Projects</a></li>
+          <li><a href="#Marketing-Scroll">Marketing</a></li>
+          <li><a href="#Contact-Scroll">Contact</a></li>
           </ul>
         </nav>
 
-            <div className="User-HomePAGE-Div" id="Home">
+            <div className="User-HomePAGE-Div" id="Home-Scroll">
             <UserRoutes/>
             </div>
 
           <br></br>
-        <div id="Projects" className="ProjUpdates-container">
+        <div id="Projects-Scroll" className="ProjUpdates-container">
         <ProjectsRoutes/>
         <UpdatesRoutes/>
         </div>
 
-          <div id="Marketing">
+          <div id="Marketing-Scroll">
             <MarketingRoutes/>
           </div>
 
-        <div id="Contact">
+        <div id="Contact-Scroll">
             <ContactRoutes/>
         </div>
 
