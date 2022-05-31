@@ -17,7 +17,9 @@ const ShowUsers = ({userData}) => {
             </div>
             </Link>
             <Link to={`/CreatUser`}>Creat new User</Link>
-            <div><h1>{data.user.about}</h1></div>
+            <div className='About-User-Container'>
+            <h1>{data.user.about}</h1>
+            </div>
             </div>
         )
     )

@@ -29,7 +29,6 @@ const Main = () => {
             </div>
 
           <br></br>
-
         <div id="Projects" className="ProjUpdates-container">
         <ProjectsRoutes/>
         <UpdatesRoutes/>
