@@ -42,7 +42,7 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
     ).then((response) =>response.json()) 
 
     setImageCloudDate(ImageUrlData)
-    setImageURLStore(ImageUrlData.secure_url)
+    setImageURLStore(ImageUrlData.url)
     // console.log('ImageUrlData' ,ImageUrlData)
     // console.log('ImageUrlData.secure_url' ,ImageUrlData.secure_url)
     console.log('ImageCloudDate' ,ImageCloudDate)
@@ -59,7 +59,9 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
     ).then((response) =>response.json()) 
     
     setVideoCloudDate(VideoUrlData)
-    setVideoURLStore(VideoUrlData.secure_url)
+    setVideoURLStore(VideoUrlData.url)
+    console.log('VideoCloudDate' ,VideoCloudDate)
+    console.log('VideoURLStore' ,VideoURLStore)
   }
  
 
@@ -81,8 +83,8 @@ const handleSubmit = (event) => {
     return ProjectsData.map((data) => (
       <Link key={data._id} to={`/project/${data._id}`}>
           <div  className='ONEProj-HomePage-Container'>
-          <h3>{data.project.title}</h3>
-          <img src={data.project.image}alt={data.project.title} />
+          <h1>{data.project.title}</h1>
+          <img src={data.project.image} alt={data.project.title} />
           <p>{data.project.Description}</p> 
           <p>{data.project.shortVideo}</p>
           </div>

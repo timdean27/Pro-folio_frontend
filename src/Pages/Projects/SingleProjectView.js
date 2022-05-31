@@ -13,50 +13,58 @@ const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
     
     //console.log("projectCurrent",projectCurrent.project.image)
 
-    const [editProject, setEditProject] = useState(projectCurrent)
+const [editProject, setEditProject] = useState(projectCurrent)
 
 
 
-    const handleChange = (event) => {
-        setEditProject({
-            project: {
-                ...editProject.project,
-                [event.target.name]: event.target.value
-            }
-        })
-    }
-
-    const handleSubmit = event => {
-        event.preventDefault()
-        updateProject(editProject, id)
-        navigate(`/Project/${id}`)
-    }
-
-    const DeleteProjectFunc = () => {
-        deleteProject(id)
-        navigate(`/`)
+const handleChange = (event) => {
+  setEditProject({
+      project: {
+          ...editProject.project,
+          [event.target.name]: event.target.value
       }
+  })
+}
 
-    const loadedProjects = () => {
-        return (
-          <a href={projectCurrent.project.appLink} target="_blank">
-                <div key={projectCurrent._id} className='SingleProject-items-Container'>
-                <h3>{projectCurrent.project.title}</h3>
-                <img src="" alt={projectCurrent.project.title} />
-                <p>{projectCurrent.project.shortVideo}</p>  
-                <p>{projectCurrent.project.Description}</p>
-                </div>
-          </a>
-            )
-      }
-      
-      const loadingProjects = () => {
-        return <h1>Loading.........</h1>
-      }
+const handleSubmit = event => {
+  event.preventDefault()
+  updateProject(editProject, id)
+  navigate(`/Project/${id}`)
+}
 
+const DeleteProjectFunc = () => {
+  deleteProject(id)
+  navigate(`/`)
+}
+
+const loadedProjects = () => {
   return (
+    
+          <div key={projectCurrent._id} className='SingleProject-items-Container'>
+              <h1 className='SingleProject-Title-h1'>{projectCurrent.project.title}</h1>
+          
+          <a href={projectCurrent.project.appLink} target="_blank"> 
+            <div className='SingleProject-Image' >
+              <img src={projectCurrent.project.image} alt={projectCurrent.project.title} />
+            </div>
+          </a>
+            <div  className='SingleProject-Description-Container' >
+              <p>{projectCurrent.project.shortVideo}</p>  
+              <p>{projectCurrent.project.Description}</p>
+            
+              </div>
+          </div>
+    
+      )
+}
+
+const loadingProjects = () => {
+  return <h1>Loading.........</h1>
+}
+
+
+return (
     <div className='Main-SingleProject-Container'>
-    <h1>SingleProjectView ID# :{projectCurrent._id}</h1>
     {ProjectsData ? loadedProjects() : loadingProjects()}
     <div className='SingleProject-Forms-Container'>
     <form onSubmit={handleSubmit}>
