@@ -17,11 +17,11 @@ const Main = () => {
       <div className="App">
           <nav className="Nav-option1">
           <ul>
-          <li><a href="#Home-Scroll">Home</a></li>
-          <li><a href="#About-Scroll">About</a></li>
-          <li><a href="#Projects-Scroll">Projects</a></li>
-          <li><a href="#Marketing-Scroll">Marketing</a></li>
-          <li><a href="#Contact-Scroll">Contact</a></li>
+            <li><a href="#Home-Scroll">Home</a></li>
+            <li><a href="#About-Scroll">About</a></li>
+            <li><a href="#Projects-Scroll">Projects</a></li>
+            <li><a href="#Marketing-Scroll">Marketing</a></li>
+            <li><a href="#Contact-Scroll">Contact</a></li>
           </ul>
         </nav>
 
@@ -30,6 +30,7 @@ const Main = () => {
             </div>
 
           <br></br>
+
         <div id="Projects-Scroll" className="ProjUpdates-container">
         <ProjectsRoutes/>
         <UpdatesRoutes/>

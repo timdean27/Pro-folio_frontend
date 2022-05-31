@@ -1,43 +1,70 @@
+.SingleProject-items-Container{
+  border: .3em solid;
+  justify-content: center;
+  text-align: center;
+  padding-left: 3vw;
+  background-color:grey;
+}
 .ProjUpdates-container{
   display: flex;
   flex-direction: row;
   gap: 10px;
-  padding: 10px;    
+
 }
 
 /* SingleProjects page CSS */
-.Main-SingleProject-Container{
-  display: flex;
-  flex-direction: column;
-  border: .3em solid blue;
-  padding-top: 20vh;
+.SingleProject-Title-h1{
+  width:28vw;
   text-align: center;
 }
+.SingleProject-Image{
+  border: .3em solid blue;
+  overflow: auto;
+  width:28vw;
+  height:44.2vh;
+  text-align: center;
+  background-color:white;
+}
 
-.SingleProject-items-Container{
+.SingleProject-Description-Container{
   border: .3em solid purple;
-
+  overflow: auto;
+  width:28vw;
+  height:45vh;
+  text-align: left;
+  word-wrap: break-word;
+  background-color:white;
 }
 .SingleProject-Forms-Container{
   border: .3em solid orange;
+  justify-content: center;
+  text-align: center;
+  width:35vw;
+
 }
 .SinglePoj-deleteBTN{
   margin-right: 10vw;
-  margin-left: 10vw;
+  margin-left: 9vw;
   justify-content: center;
+  text-align: center;
 }
 
 /*Show Project page css  */
 .Projects-HomePage-Container{
 display: flex;
 flex-direction: row;
-border: .3em solid green;
+border: .3em solid pink;
 text-align: center;
 margin-top: 1vw;
 
 }
 .ONEProj-HomePage-Container{
+overflow: auto;
+flex: 1;
+height: 70vh;
+width:30vw;
 border: .3em solid green;
+word-wrap: break-word;
 text-align: center;
 margin-top: 1vw;
 margin-right: 1vw;
@@ -49,6 +76,9 @@ margin-right: 1vw;
   display: flex;
   flex-direction: column;
   border: .3em solid red;
+  margin-top: 2vw;
+  gap: 10px;
+  padding: 10px;
 }
 .ShowUpdates-items-Container{
   border: .3em solid pink;
@@ -56,6 +86,7 @@ margin-right: 1vw;
 }
 .ShowUpdates-Forms-Container{
   border: .3em solid orange;
+  text-align: center;
 }
 #Update-Date{
 float: right;
