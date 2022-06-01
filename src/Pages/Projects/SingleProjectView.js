@@ -120,45 +120,45 @@ const loadingProjects = () => {
 return (
     <div className='Main-SingleProject-Container'>
     {ProjectsData ? loadedProjects() : loadingProjects()}
-    <div className='SingleProject-Forms-Container'>
-    <form onSubmit={handleSubmit}>
-    <input
-    type="file"
-    placeholder='image URL'
-    onChange={(event) => {setImageInput(event.target.files[0])}}
-    />
-    <button onClick={handleImageInput}>Upload Project Image</button>
-    <input
-        type='text'
-        value={editProject.project.title}
-        name='title'
-        placeholder='title'
-        onChange={handleChange}
-    />
-    <input
-        type='text'
-        value={editProject.project.image}
-        name='image'
-        placeholder='image URL'
-        onChange={handleChange}
-    />
-    <input
-        type='text'
-        value={editProject.project.Description}
-        name='Description'
-        placeholder='Description'
-        onChange={handleChange}
-    />
-    <input
-    type='text'
-    value={editProject.project.appLink}
-    name='appLink'
-    placeholder='appLink'
-    onChange={handleChange}
-    />
-    <input type='submit' value='Edit Project' />
-    </form>
-    </div>
+      <div className='SingleProject-Forms-Container'>
+        <form onSubmit={handleSubmit}>
+              <input
+              type="file"
+              placeholder='image URL'
+              onChange={(event) => {setImageInput(event.target.files[0])}}
+              />
+              <button onClick={handleImageInput}>Upload Project Image</button>
+              <input
+                  type='text'
+                  value={editProject.project.title}
+                  name='title'
+                  placeholder='title'
+                  onChange={handleChange}
+              />
+              <input
+                  type='text'
+                  value={editProject.project.image}
+                  name='image'
+                  placeholder='image URL'
+                  onChange={handleChange}
+              />
+              <input
+                  type='text'
+                  value={editProject.project.Description}
+                  name='Description'
+                  placeholder='Description'
+                  onChange={handleChange}
+              />
+              <input
+              type='text'
+              value={editProject.project.appLink}
+              name='appLink'
+              placeholder='appLink'
+              onChange={handleChange}
+              />
+              <input type='submit' value='Edit Project' />
+        </form>
+      </div>
     <button className="SinglePoj-deleteBTN" onClick={DeleteProjectFunc}>
             DELETE This Project{projectCurrent._id}
           </button>

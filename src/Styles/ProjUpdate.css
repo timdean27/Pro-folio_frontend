@@ -1,4 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .SingleProject-items-Container{
+  margin-top: 10vh;
   border: .3em solid;
   justify-content: center;
   text-align: center;
@@ -82,12 +87,13 @@ margin-right: 1vw;
   flex-direction: column;
   border: .3em solid red;
   background-color:white;
-  margin-top: 2vw;
+  margin-top: 12vw;
   gap: 10px;
   padding: 10px;
 }
 .ShowUpdates-items-Container{
   border: .3em solid pink;
+  word-wrap: break-word;
 
 }
 .ShowUpdates-Forms-Container{
@@ -95,10 +101,13 @@ margin-right: 1vw;
   background-color:white;
   text-align: center;
 }
+
 #Update-Date{
-float: right;
-float: top;
-border: .3em solid green;
+  float: right;
+  position: relative;
+  top: 0;
+  bottom:100%;
+  border: .3em solid green;
 }
 
 
