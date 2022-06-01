@@ -36,7 +36,8 @@
   background-color:white;
 }
 .SingleProject-Forms-Container{
-  border: .3em solid orange;
+  border: .3em solid brown;
+  background-color:white;
   justify-content: center;
   text-align: center;
   width:35vw;
@@ -67,6 +68,7 @@ flex: 1;
 height: 70vh;
 width:30vw;
 border: .3em solid green;
+background-color:lightgrey;
 word-wrap: break-word;
 text-align: center;
 margin-top: 1vw;
@@ -79,6 +81,7 @@ margin-right: 1vw;
   display: flex;
   flex-direction: column;
   border: .3em solid red;
+  background-color:white;
   margin-top: 2vw;
   gap: 10px;
   padding: 10px;
@@ -89,6 +92,7 @@ margin-right: 1vw;
 }
 .ShowUpdates-Forms-Container{
   border: .3em solid orange;
+  background-color:white;
   text-align: center;
 }
 #Update-Date{

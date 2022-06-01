@@ -63,7 +63,6 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
               <p>{data.updates.updateDescription}</p>
               <p>{data.updates.additions}</p>
               <p>{data.updates.comments}</p>
-              <p>{data.updates.projectID}</p>
             </div>
       </Link>
         )
