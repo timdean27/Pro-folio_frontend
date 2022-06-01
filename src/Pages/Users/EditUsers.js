@@ -83,57 +83,50 @@ const EditUsers = ({userData , updateUser , deleteUser}) => {
     <div className='Main-SingleUser-Container'>
     <h1>SingleuserView ID# :{userCurrent._id}</h1>
     {userData ? loadedUsers() : loadingUsers()}
-    <div className='SingleUser-Forms-Container'>
-    <form onSubmit={handleSubmit}>
-    
-    <input
-    type="file"
-    placeholder='image URL'
-    onChange={(event) => {setPictureInput(event.target.files[0])}}
-    />
-    <button onClick={handlePictureInput}>Upload Profile Picture</button>
+      <div className='SingleUser-Forms-Container'>
+          <form onSubmit={handleSubmit}>
+          <input
+          type="file"
+          placeholder='image URL'
+          onChange={(event) => {setPictureInput(event.target.files[0])}}
+          />
+          <button onClick={handlePictureInput}>Upload Profile Picture</button>
 
-    <input
-        type='text'
-        value={edituser.user.username}
-        name='username'
-        placeholder='username'
-        onChange={handleChange}
-    />
-    <input
-            type='text'
-            value={edituser.user.profileName}
-            name='profileName'
-            placeholder='profileName'
-            onChange={handleChange}
-        />
-        <input
-        type='text'
-        value={edituser.user.about}
-        name='about'
-        placeholder='about'
-        onChange={handleChange}
-    />
-    <input
-        type='text'
-        value={edituser.user.profilePic}
-        name='profilePic'
-        placeholder='profilePic URL'
-        onChange={handleChange}
-    />
-    <input
-        type='text'
-        value={edituser.user.password}
-        name='password'
-        placeholder='password'
-        onChange={handleChange}
-    />
-    <input type='submit' value='Edit user' />
-    </form>
-    </div>
-    <button className="SinglePoj-deleteBTN" onClick={DeleteuserFunc}>
-            DELETE This user{userCurrent._id}
-          </button>
+          <input
+              type='text'
+              value={edituser.user.username}
+              name='username'
+              placeholder='username'
+              onChange={handleChange}
+          />
+          <input
+                  type='text'
+                  value={edituser.user.profileName}
+                  name='profileName'
+                  placeholder='profileName'
+                  onChange={handleChange}
+              />
+          <input
+              type="text" 
+              value={edituser.user.about}
+              name='about'
+              placeholder='about'
+              onChange={handleChange}
+          />
+          <input
+              type='text'
+              value={edituser.user.password}
+              name='password'
+              placeholder='password'
+              onChange={handleChange}
+          />
+          <input type='submit' value='Edit user' />
+          </form>
+        
+        <button className="SinglePoj-deleteBTN" onClick={DeleteuserFunc}>
+                DELETE User Info
+        </button>
+      </div>
     </div>
   )
 }
