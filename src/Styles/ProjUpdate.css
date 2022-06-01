@@ -18,7 +18,7 @@
   text-align: center;
 }
 .SingleProject-Image{
-  border: .3em solid blue;
+  border: .3em solid rgb(255, 136, 0);
   overflow: auto;
   width:28vw;
   height:44.2vh;
