@@ -82,7 +82,7 @@ const ShowContact = ({ContactData, createContact}) => {
       <h1 className="contact-header">Contact</h1>
       <section id="contact-section"></section>
       {ContactData ? loadedContacts() : loadingContacts()}
-      <form onSubmit={TwoOnsubmit} >
+      <form onSubmit={sendEmail} >
       
         <input
             type='text'
