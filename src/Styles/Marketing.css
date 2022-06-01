@@ -1,27 +1,41 @@
 .marketing {
-  background: linear-gradient(-45deg, #ee7752, #cb628a, #23a6d5, #23d5ab);
+  background: linear-gradient(45deg, black, #F27F4C 13%, #EC6653 25%, #DE4256 36%, #F27F4C 70%, black 100%);
   padding: 0.938em 0 0.938em 1em;
   
+  
 }
+
+
 
 .marketing ul {
   display: flex;
   gap: 2rem;
-  padding: 0;
+  padding: 4px;
   margin: 0 0 1em;
+  height: 70; 
+    padding: 1em;
+    justify-content:space-around;
+    
+    
 }
 
 .marketing ul li {
   list-style-type: none;
   padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+  
 }
 
 .marketing a {
   display: flex;
   justify-content: flex-start;
-  gap: 2em;
+  gap: 1em;
   text-decoration: none;
-  color: #fff;
+  color: white
+  
+  
+  
 }
 
 .github::before,
@@ -29,11 +43,14 @@
 .resume::before,
 .coverletter::before {
   padding-right: 0.4em;
+  font-size: 4em;
+  
 }
 
 .resume,
 .coverletter {
   font-weight: 400;
+  
 }
 
 .btn-edit-marketing {
@@ -45,6 +62,8 @@
   font-weight: bold;
   border-radius: 0.313em;
   cursor: pointer;
+  
+  
 }
 
   

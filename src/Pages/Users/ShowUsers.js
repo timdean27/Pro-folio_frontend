@@ -17,7 +17,7 @@ const ShowUsers = ({userData}) => {
             </div>
             </Link>
             <div className="createUserLink">
-            <Link to={`/CreatUser`}>Creat new User</Link>
+            <Link to={`/CreatUser`}>Create new User</Link>
    </div>
             <Link className="UserLink"to={`/user/${data._id}`}>
             <div id="About-Scroll" className='About-User-Container'>
