@@ -97,7 +97,7 @@ const handleSubmit = (event) => {
 
   const loadedProjects = () => {
     return ProjectsData.map((data) => (
-      <Link key={data._id} to={`/project/${data._id}`}>
+      <Link className="Project-Link" key={data._id} to={`/project/${data._id}`}>
           <div  className='ONEProj-HomePage-Container'>
           <h1>{data.project.title}</h1>
           <img src={data.project.image} alt={data.project.title} />
@@ -119,31 +119,31 @@ const handleSubmit = (event) => {
     {ProjectsData ? loadedProjects() : loadingProjects()}
 
     <form onSubmit={handleSubmit}>
-    <input
+    <input className="form-control"
     type="file"
     placeholder='image URL'
     onChange={(event) => {setImageInput(event.target.files[0])}}
     />
     <button onClick={handleImageInput}>Upload Project Image</button>
-    <input
+    <input className="form-control"
         type='text'
         value={newProjectForm.project.title}
         name='title'
-        placeholder='title'
+        placeholder='Project title'
         onChange={handleChange}
     />
-    <input
+    <textarea rows='6' className="form-control"
         type='text'
         value={newProjectForm.project.Description}
         name='Description'
         placeholder='Description'
         onChange={handleChange}
     />
-    <input
+    <input className="form-control"
     type='text'
     value={newProjectForm.project.appLink}
     name='appLink'
-    placeholder='appLink'
+    placeholder='Link to use app'
     onChange={handleChange}
     />
     <input type='submit' value='Create New Project' />

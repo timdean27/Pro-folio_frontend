@@ -71,17 +71,19 @@ const ShowContact = ({ContactData, createContact}) => {
 
 
 
-   const onsubmit =() =>{
+   const TwoOnsubmit =() =>{
+     console.log("running on submit")
     sendEmail()
     handleSubmit()
    }
-  
+  //onSubmit={() => { sendEmail(); handleSubmit();}}
     return (
     <div className="contact-container">
       <h1 className="contact-header">Contact</h1>
       <section id="contact-section"></section>
       {ContactData ? loadedContacts() : loadingContacts()}
-      <form onSubmit={sendEmail}>
+      <form onSubmit={TwoOnsubmit} >
+      
         <input
             type='text'
             value={newContactForm.reach_out_to_Dev.yourQuestion}
