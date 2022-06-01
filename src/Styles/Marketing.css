@@ -1,6 +1,7 @@
 .marketing {
-  background-color: rgb(238, 86, 15);
+  background: linear-gradient(-45deg, #ee7752, #cb628a, #23a6d5, #23d5ab);
   padding: 0.938em 0 0.938em 1em;
+  
 }
 
 .marketing ul {

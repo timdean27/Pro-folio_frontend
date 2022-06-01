@@ -1,14 +1,67 @@
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #cb628a, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+
 html {
   scroll-behavior: smooth;
 }
 .User-HomePAGE-Div{
   margin-top:15vh
+  
+  
 }
 .Profile-Container{
   border:  4px solid black;
+  text-shadow: 12px 12px 15px rgba(0,0,0,0.5), 4px 4px 3px rgba(0,0,0,0.1);
+  text-align: center;
+
+  
+  
 }
+
+
+
+
+
+
+
+
+.createUserLink {
+ text-align: center;
+ font-size: 2.5em
+}
+
+
+.UserLink {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em
+}
+
+
+
 .About-User-Container{
-  border:  4px solid purple;
+  border:  4px solid black;
+  text-shadow: 12px 12px 15px rgba(0,0,0,0.5), 4px 4px 3px rgba(0,0,0,0.1);
+  text-align: center;
 }
 .Nav-option1 {
   position: fixed;
@@ -17,7 +70,7 @@ html {
   margin: 10px;
     background-image: linear-gradient(45deg, #F78834 0%, #F27F4C 13%, #EC6653 25%, #DE4256 36%, #D4414E 50%, #B8328D 62%, #B43498 75%, #953FAF 86%, #525ECF 100%);
     opacity: .4;
-    color: #cccccc;
+    color:pink;
     font-family: 'Francois One', sans-serif;
     text-transform: uppercase;
     font-size: 25px;
