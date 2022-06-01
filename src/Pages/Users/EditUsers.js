@@ -3,8 +3,6 @@ import { useState} from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom'
 
 
-
-
 const EditUsers = ({userData , updateUser , deleteUser}) => {
 
     const navigate = useNavigate()

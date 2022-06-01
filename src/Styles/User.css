@@ -1,4 +1,4 @@
-/* 
+/*  
 body {
 	 background: linear-gradient(-45deg, #ee7752, #cb628a, #23a6d5, #23d5ab); 
 	background-size: 400% 400%;
@@ -16,15 +16,9 @@ body {
 	100% {
 		background-position: 0% 50%;
 	}
-} */
+}  */
 
 
-
-
-html {
-  scroll-behavior: smooth;
-  	background: linear-gradient(-45deg, #ee7752, #cb628a, #23a6d5, #23d5ab);
-}
 .User-HomePAGE-Div{
   margin-top:15vh;
   background-image: linear-gradient(45deg, #F78834 0%, #F27F4C 13%, #EC6653 25%, #DE4256 36%, #D4414E 50%, #B8328D 62%, #B43498 75%, #953FAF 86%, #525ECF 100%);
@@ -35,12 +29,11 @@ html {
    border-radius: 9%;
    text-align: center;
    text-decoration: underline;
- 
-   
-  
+
 }
+
 .Profile-Container:hover {
-	background: linear-gradient(-45deg, #ee7752, #cb628a, #23a6d5, #23d5ab);
+	background-color: linear-gradient(-45deg, #ee7752, #cb628a, #23a6d5, #23d5ab);
   cursor: pointer;
 }
 .Profile-Container{
@@ -54,16 +47,10 @@ html {
 }
 
 
-
-
-
-
-
-
 .createUserLink {
  text-align: center;
  font-size: 2.5em;
- background: linear-gradient(-45deg, #ee7752, #cb628a, #23a6d5, #23d5ab);
+ background-color: linear-gradient(-45deg, #ee7752, #cb628a, #23a6d5, #23d5ab);
 }
 
 

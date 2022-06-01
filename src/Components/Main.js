@@ -26,7 +26,7 @@ const Main = () => {
         </nav>
         
 
-            <div className="User-HomePAGE-Div" id="Home-Scroll">
+            <div  id="Home-Scroll">
             <UserRoutes/>
             </div>
 
