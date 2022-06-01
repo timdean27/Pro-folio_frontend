@@ -4,12 +4,16 @@ import React from 'react'
 
 const CreatUser = ({userData,createUser}) => {
   //console.log("props from ShowUsers",userData)
+  const [PictureInput, setPictureInput] = useState("")
+  const [PictureURLStore, setPictureURLStore] = useState("")
+  const [PictureCloudDate, setPictureCloudDate] = useState("")
+  
   const [newUserForm, setnewUserForm] = useState({
     user:{
       username: '',
       profileName: '',
       about: '',
-      profilePic: '',
+      profilePic: PictureURLStore,
       password: ''
   }
   })
@@ -24,6 +28,29 @@ const CreatUser = ({userData,createUser}) => {
     //console.log("handleChangeUser", newUserForm)
 }
 
+const handlePictureInput = async (files) =>{
+  files.preventDefault()
+  const formData = new FormData();
+  formData.append("file" , PictureInput)
+  formData.append('upload_preset', 'GAproject3');
+  const PictureUrlData = await fetch(`https://api.cloudinary.com/v1_1/dtonselel/image/upload`,
+  {method: 'post', body:formData}
+  ).then((response) =>response.json()) 
+
+  setPictureCloudDate(PictureUrlData)
+  setPictureURLStore(PictureUrlData.url)
+  // console.log('PictureUrlData' ,PictureUrlData)
+  // console.log('PictureUrlData.secure_url' ,PictureUrlData.secure_url)
+  console.log('PictureCloudDate' ,PictureCloudDate)
+  console.log('PictureURLStore' ,PictureURLStore)
+
+  setnewUserForm({
+    user: {
+        ...newUserForm.user,
+        profilePic: PictureURLStore
+    }
+})
+}
 
 const handleSubmit = (event) => {
     event.preventDefault();
@@ -62,10 +89,17 @@ const loadingUsers = () => {
 
 
   return (
-    <div>
+    <div className="Creat-User-Main-Page">
     {userData ? loadedUsers() : loadingUsers()}
     <form onSubmit={handleSubmit}>
-        <input
+    <input
+    type="file"
+    placeholder='image URL'
+    onChange={(event) => {setPictureInput(event.target.files[0])}}
+    />
+    <button onClick={handlePictureInput}>Upload Profile Picture</button>
+        
+    <input
             type='text'
             value={newUserForm.user.username}
             name='username'
