@@ -91,44 +91,47 @@ const loadingUsers = () => {
   return (
     <div className="Creat-User-Main-Page">
     {userData ? loadedUsers() : loadingUsers()}
+    <div className='SingleUser-Forms-Container'>
     <form onSubmit={handleSubmit}>
-    <input
+    <input className="form-control"
     type="file"
     placeholder='image URL'
     onChange={(event) => {setPictureInput(event.target.files[0])}}
     />
     <button onClick={handlePictureInput}>Upload Profile Picture</button>
         
-    <input
+    <input className="form-control"
             type='text'
             value={newUserForm.user.username}
             name='username'
             placeholder='username'
             onChange={handleChange}
         />
-        <input
-            type='text'
+        <input className="form-control"
+            type='text' 
             value={newUserForm.user.profileName}
             name='profileName'
             placeholder='profileName'
             onChange={handleChange}
         />
-        <input
+        <textarea rows='4' className="form-control"
             type='text'
             value={newUserForm.user.about}
             name='about'
             placeholder='about'
             onChange={handleChange}
         />
-        <input
+        <input className="form-control"
             type='text'
             value={newUserForm.user.password}
             name='password'
             placeholder='password'
             onChange={handleChange}
         />
-        <input type='submit' value='Create New User' />
-    </form></div>
+        <input className="btn btn-secondary btn-lg btn-block" type='submit' value='Create New User' />
+    </form>
+    </div>
+    </div>
   )
 }
 

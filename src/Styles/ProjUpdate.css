@@ -1,7 +1,10 @@
 html {
   scroll-behavior: smooth;
 }
-
+.Main-SingleProject-Container{
+  margin-top: 10vh;
+  width:40vw;
+}
 .SingleProject-items-Container{
   margin-top: 10vh;
   border: .3em solid;
@@ -27,8 +30,12 @@ html {
   overflow: auto;
   width:28vw;
   height:44.2vh;
-  text-align: center;
-  background-color:white;
+  align-items: center;
+  background-color:lightgrey;
+}
+.Single-Project-IMG{
+  max-width:28vw;
+  max-height:44.2vh;
 }
 
 .SingleProject-Description-Container{
@@ -63,7 +70,6 @@ flex-direction: row;
 border: .3em solid pink;
 text-align: center;
 margin-top: 1vw;
-
 }
 
 
@@ -81,6 +87,10 @@ margin-top: 1vw;
 margin-right: 1vw;
 }
 
+.SHOW-Project-IMG{
+  max-height:50vh;
+  max-width:50vw; 
+}
 
 /* ShowUpdates page CSS */
 .Main-ShowUpdates-Container{
@@ -120,4 +130,3 @@ margin-right: 1vw;
 .Main-SingleUpdate-Container{
   margin-top: 15vh;
 }
-

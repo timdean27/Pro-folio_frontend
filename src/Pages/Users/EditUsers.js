@@ -85,42 +85,42 @@ const EditUsers = ({userData , updateUser , deleteUser}) => {
     {userData ? loadedUsers() : loadingUsers()}
       <div className='SingleUser-Forms-Container'>
           <form onSubmit={handleSubmit}>
-          <input
+          <input className="form-control"
           type="file"
           placeholder='image URL'
           onChange={(event) => {setPictureInput(event.target.files[0])}}
           />
           <button onClick={handlePictureInput}>Upload Profile Picture</button>
 
-          <input
+          <input className="form-control"
               type='text'
               value={edituser.user.username}
               name='username'
               placeholder='username'
               onChange={handleChange}
           />
-          <input
+          <input className="form-control"
                   type='text'
                   value={edituser.user.profileName}
                   name='profileName'
                   placeholder='profileName'
                   onChange={handleChange}
               />
-          <input
+          <textarea rows='4' className="form-control"
               type="text" 
               value={edituser.user.about}
               name='about'
               placeholder='about'
               onChange={handleChange}
           />
-          <input
+          <input className="form-control"
               type='text'
               value={edituser.user.password}
               name='password'
               placeholder='password'
               onChange={handleChange}
           />
-          <input type='submit' value='Edit user' />
+          <input className="btn btn-secondary btn-lg btn-block" type='submit' value='Edit user' />
           </form>
         
         <button className="SinglePoj-deleteBTN" onClick={DeleteuserFunc}>

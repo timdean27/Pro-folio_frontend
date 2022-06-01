@@ -99,7 +99,7 @@ const loadedProjects = () => {
           
           <a href={projectCurrent.project.appLink} target="_blank"> 
             <div className='SingleProject-Image' >
-              <img src={projectCurrent.project.image} alt={projectCurrent.project.title} />
+              <img className ="Single-Project-IMG" src={projectCurrent.project.image} alt={projectCurrent.project.title} />
             </div>
           </a>
             <div  className='SingleProject-Description-Container' >
@@ -120,36 +120,36 @@ const loadingProjects = () => {
 return (
     <div className='Main-SingleProject-Container'>
     {ProjectsData ? loadedProjects() : loadingProjects()}
-      <div className='SingleProject-Forms-Container'>
-        <form onSubmit={handleSubmit}>
+      <div className="container border">
+        <form className="row" onSubmit={handleSubmit}>
               <input
               type="file"
               placeholder='image URL'
               onChange={(event) => {setImageInput(event.target.files[0])}}
               />
               <button onClick={handleImageInput}>Upload Project Image</button>
-              <input
+              <input className="form-control"
                   type='text'
                   value={editProject.project.title}
                   name='title'
                   placeholder='title'
                   onChange={handleChange}
               />
-              <input
+              <input className="form-control"
                   type='text'
                   value={editProject.project.image}
                   name='image'
                   placeholder='image URL'
                   onChange={handleChange}
               />
-              <input
+              <textarea rows='4' className="form-control"
                   type='text'
                   value={editProject.project.Description}
                   name='Description'
                   placeholder='Description'
                   onChange={handleChange}
               />
-              <input
+              <input className="form-control"
               type='text'
               value={editProject.project.appLink}
               name='appLink'
