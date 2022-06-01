@@ -74,6 +74,13 @@ const SingleUpdateView = ({UpdatesData , editUpdate , deleteUpdate}) => {
         placeholder='comments'
         onChange={handleChange}
     />
+    <input
+            type='date'
+            value={editUpdateState.updates.date_Of_Update}
+            name='date_Of_Update'
+            placeholder='date_Of_Update'
+            onChange={handleChange}
+        />
     <input type='submit' value='Edit Update' />
     </form>
     </div>

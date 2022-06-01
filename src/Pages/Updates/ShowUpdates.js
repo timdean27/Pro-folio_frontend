@@ -15,7 +15,8 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
         updateDescription: '',
         additions: '',
         comments:'',
-        updatedAt: new Date(),
+        date_Of_Update: new Date(),
+        date_Of_Post: new Date(),
         projectID: id
     }
     })
@@ -39,7 +40,8 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
           updateDescription: '',
           additions: '',
           comments:'',
-          updatedAt: new Date(),
+          date_Of_Update: new Date(),
+          date_Of_Post: new Date(),
           projectID: id
       }
       })
@@ -59,10 +61,12 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
     }).map((data) => (
       <Link to={`/Updates/${data._id}`}>
             <div key={data._id} className='ShowUpdates-items-Container'>
-              <p id="Update-Date">{data.updates.updatedAt}</p>
-              <p>{data.updates.updateDescription}</p>
-              <p>{data.updates.additions}</p>
-              <p>{data.updates.comments}</p>
+              <p id="Update-Date">Posted:{data.updates.date_Of_Post}</p>
+              <p>Update Description:{data.updates.updateDescription}</p>
+              <p>Additons:{data.updates.additions}</p>
+              <p>Comments:{data.updates.comments}</p>
+              <p>Project Edited on:{data.updates.date_Of_Update}</p>
+              
             </div>
       </Link>
         )
@@ -76,7 +80,7 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
 
   return (
     <div className='Main-ShowUpdates-Container'>
-    <h1>ShowUpdates</h1>
+    <h1>Updates, Additons, and Comments</h1>
     {UpdatesData ? FilterUpdates() : loadingUpdates()}
     <div className ="ShowUpdates-Forms-Container" >
     <form onSubmit={handleSubmit}>
@@ -103,9 +107,9 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
         />
         <input
             type='date'
-            value={newUpdatesForm.updates.updatedAt}
-            name='updatedAt'
-            placeholder='updatedAt'
+            value={newUpdatesForm.updates.date_Of_Update}
+            name='date_Of_Update'
+            placeholder='date_Of_Update'
             onChange={handleChange}
         />
         <input type='submit' value='Create New Updates' />
