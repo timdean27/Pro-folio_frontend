@@ -158,10 +158,13 @@ return (
               />
               <input type='submit' value='Edit Project' />
         </form>
-      </div>
-    <button className="SinglePoj-deleteBTN" onClick={DeleteProjectFunc}>
-            DELETE This Project{projectCurrent._id}
+      
+          <button className="SinglePoj-deleteBTN" onClick={DeleteProjectFunc}>
+            DELETE Project:
+            <br></br>
+            {projectCurrent.project.title}
           </button>
+      </div>
     </div>
   )
 }

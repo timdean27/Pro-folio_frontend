@@ -119,6 +119,21 @@ body {
   }
   
   
-  
+  .Profile-IMG{
+    height:200px;
+    width:200px 
+  }
+
+  .SingleUser-Forms-Container{
+    border: 4px solid #ffffff;
+    display: inline-block;
+    width: 50vw;
+    text-align:left;
+
+  }
+.SinglePoj-deleteBTN{
+  width: 10vw;
+  text-align:left;
+}
   
   

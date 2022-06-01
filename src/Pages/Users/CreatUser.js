@@ -122,13 +122,6 @@ const loadingUsers = () => {
         />
         <input
             type='text'
-            value={newUserForm.user.profilePic}
-            name='profilePic'
-            placeholder='profilePic'
-            onChange={handleChange}
-        />
-        <input
-            type='text'
             value={newUserForm.user.password}
             name='password'
             placeholder='password'
