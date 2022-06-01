@@ -13,7 +13,7 @@ const ShowUsers = ({userData}) => {
             <div key={data._id} className="User-HomePAGE-Div">
             <Link className="UserLink" to={`/user/${data._id}`}>
               <div className='Profile-Container' >
-                   <h1>{data.user.profilePic}</h1> 
+              <img src={data.user.profilePic} alt="Profile Picture" />
                   <h1>{data.user.profileName}</h1>
               </div>
             </Link>

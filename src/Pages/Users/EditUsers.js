@@ -9,9 +9,12 @@ const EditUsers = ({userData , updateUser , deleteUser}) => {
     const { id } = useParams()
     let userCurrent = userData.find(user => user._id === id)
     const [edituser, setEdituser] = useState(userCurrent)
-    console.log("THIS IS THE IS From USER  Single",id)
-    console.log("THIS IS THE USER Data",userData)
-    console.log("userCurrent",userCurrent.user)
+    const [PictureInput, setPictureInput] = useState("")
+  const [PictureURLStore, setPictureURLStore] = useState("")
+  const [PictureCloudDate, setPictureCloudDate] = useState("")
+    // console.log("THIS IS THE IS From USER  Single",id)
+    // console.log("THIS IS THE USER Data",userData)
+    // console.log("userCurrent",userCurrent.user)
 
     const handleChange = (event) => {
         setEdituser({
@@ -20,6 +23,32 @@ const EditUsers = ({userData , updateUser , deleteUser}) => {
                 [event.target.name]: event.target.value
             }
         })
+    }
+
+
+
+    const handlePictureInput = async (files) =>{
+      files.preventDefault()
+      const formData = new FormData();
+      formData.append("file" , PictureInput)
+      formData.append('upload_preset', 'GAproject3');
+      const PictureUrlData = await fetch(`https://api.cloudinary.com/v1_1/dtonselel/image/upload`,
+      {method: 'post', body:formData}
+      ).then((response) =>response.json()) 
+    
+      setPictureCloudDate(PictureUrlData)
+      setPictureURLStore(PictureUrlData.url)
+      // console.log('PictureUrlData' ,PictureUrlData)
+      // console.log('PictureUrlData.secure_url' ,PictureUrlData.secure_url)
+      console.log('PictureCloudDate' ,PictureCloudDate)
+      console.log('PictureURLStore' ,PictureURLStore)
+    
+      setEdituser({
+        user: {
+            ...edituser.user,
+            profilePic: PictureURLStore
+        }
+    })
     }
 
     const handleSubmit = event => {
@@ -56,6 +85,14 @@ const EditUsers = ({userData , updateUser , deleteUser}) => {
     {userData ? loadedUsers() : loadingUsers()}
     <div className='SingleUser-Forms-Container'>
     <form onSubmit={handleSubmit}>
+    
+    <input
+    type="file"
+    placeholder='image URL'
+    onChange={(event) => {setPictureInput(event.target.files[0])}}
+    />
+    <button onClick={handlePictureInput}>Upload Profile Picture</button>
+
     <input
         type='text'
         value={edituser.user.username}
