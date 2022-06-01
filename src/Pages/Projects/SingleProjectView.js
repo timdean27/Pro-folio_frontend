@@ -15,11 +15,11 @@ const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
 
 const [editProject, setEditProject] = useState(projectCurrent)
 const [ImageInput, setImageInput] = useState("")
-const [VideoInput, setVideoInput] = useState("")
+//const [VideoInput, setVideoInput] = useState("")
 const [ImageURLStore, setImageURLStore] = useState("")
-const [VideoURLStore, setVideoURLStore] = useState("")
+//const [VideoURLStore, setVideoURLStore] = useState("")
 const [ImageCloudDate, setImageCloudDate] = useState("")
-const [VideoCloudDate, setVideoCloudDate] = useState("")
+//const [VideoCloudDate, setVideoCloudDate] = useState("")
 
 
 const handleChange = (event) => {
@@ -69,28 +69,27 @@ const handleImageInput = async (files) =>{
 
 }
 
-const handleVideoInput = async (files) =>{
-   files.preventDefault()
-  const formData = new FormData();
-  formData.append("file" , VideoInput)
-  formData.append('upload_preset', 'GAproject3');
-  const VideoUrlData = await fetch(`https://api.cloudinary.com/v1_1/dtonselel/image/upload`,
-  {method: 'post', body:formData}
-  ).then((response) =>response.json()) 
+// const handleVideoInput = async (files) =>{
+//    files.preventDefault()
+//   const formData = new FormData();
+//   formData.append("file" , VideoInput)
+//   formData.append('upload_preset', 'GAproject3');
+//   const VideoUrlData = await fetch(`https://api.cloudinary.com/v1_1/dtonselel/image/upload`,
+//   {method: 'post', body:formData}
+//   ).then((response) =>response.json()) 
   
-  setVideoCloudDate(VideoUrlData)
-  setVideoURLStore(VideoUrlData.url)
-  console.log('VideoCloudDate' ,VideoCloudDate)
-  console.log('VideoURLStore' ,VideoURLStore)
+//   setVideoCloudDate(VideoUrlData)
+//   setVideoURLStore(VideoUrlData.url)
+//   console.log('VideoCloudDate' ,VideoCloudDate)
+//   console.log('VideoURLStore' ,VideoURLStore)
   
-  setEditProject({
-    project: {
-        ...editProject.project,
-        image: VideoURLStore
-    }
-})
-
-}
+//   setEditProject({
+//     project: {
+//         ...editProject.project,
+//         image: VideoURLStore
+//     }
+// })
+// }
 
 const loadedProjects = () => {
   return (
@@ -130,12 +129,6 @@ return (
     />
     <button onClick={handleImageInput}>Upload Project Image</button>
     <input
-    type="file"
-    placeholder='shortVideo URL'
-    onChange={(event) => {setVideoInput(event.target.files[0])}}
-    />
-    <button onClick={handleVideoInput}>Upload Short Video of Project</button>
-    <input
         type='text'
         value={editProject.project.title}
         name='title'
@@ -147,13 +140,6 @@ return (
         value={editProject.project.image}
         name='image'
         placeholder='image URL'
-        onChange={handleChange}
-    />
-    <input
-        type='text'
-        value={editProject.project.shortVideo}
-        name='shortVideo'
-        placeholder='shortVideo URL'
         onChange={handleChange}
     />
     <input
