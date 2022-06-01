@@ -3,23 +3,39 @@
     text-align: center;
     font-size: 2em;
     padding: 0em 0;
-    color: white;
+    color: whitesmoke;
     min-height:400px;
+}
 
 
-} 
+
   .contact-container{
-    background-color: rgb(55, 86, 15);
+    background: linear-gradient(-45deg, #ee7752, #cb628a, #23a6d5, #23d5ab);
      height: 70; 
     padding: 1em;
     justify-content:space-around; 
- } 
+  }
+    body {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 100vh;
+    }
+    
+    
+    
+    
+ 
+
+ 
       
 .contact-header{
     font-weight:200;
     padding-top:0;
     margin-top:0;
     font-family: 'Roboto Slab', serif;
+
+    
 
  }
 
@@ -42,31 +58,4 @@
 
 
 
-
-
-/* @media only screen and (max-width: 800px) */
-
-/* .form-box {
-    justify-content: center;
-    align-items: center;
-    background: whitesmoke; 
-} */
-
-/* h1{
-    font-weight:400;
-    padding-top:0;
-    margin-top:0;
-    font-family: 'Roboto Slab', serif;
-} */
-
-/* .button {
-    background: rgb(237, 40, 70);
-    border-radius: 5px;
-    padding: 15px 25px;
-    display: inline-block;
-    margin: 10px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    box-shadow:0px 2px 5px rgb(0,0,0,0.5);
-} */
+  
