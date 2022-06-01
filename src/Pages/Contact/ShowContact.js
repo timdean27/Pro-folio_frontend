@@ -1,7 +1,8 @@
 import React from 'react'
 // import { link } from 'react-router-dom';
-import { useState } from 'react'
+import { useState ,useRef } from 'react'
 import "../../Styles/Contact.css";
+import emailjs from 'emailjs-com';
 
 const ShowContact = ({ContactData, createContact}) => {
     //console.log("props from ShowContact",ContactData)
@@ -35,7 +36,23 @@ const ShowContact = ({ContactData, createContact}) => {
       }
       })
   }
-  
+
+
+
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_a8wgdba', 'template_hc21lj3', e.target, 'WN4Yo7G89VsX0VFAk')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
     
     const loadedContacts = () => {
       return ContactData.map((data) => (
@@ -51,14 +68,20 @@ const ShowContact = ({ContactData, createContact}) => {
     const loadingContacts = () => {
       return <h1>Loading.........</h1>
     }
+
+
+
+   const onsubmit =() =>{
+    sendEmail()
+    handleSubmit()
+   }
   
     return (
     <div className="contact-container">
       <h1 className="contact-header">Contact</h1>
       <section id="contact-section"></section>
       {ContactData ? loadedContacts() : loadingContacts()}
-      <form onSubmit={handleSubmit}>
-
+      <form onSubmit={sendEmail}>
         <input
             type='text'
             value={newContactForm.reach_out_to_Dev.yourQuestion}
