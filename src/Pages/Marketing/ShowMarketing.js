@@ -42,28 +42,28 @@ const ShowMarketing = ({ MarketingData, createMarketing }) => {
         <div key={data._id} className="marketing">
           <ul>
             <li>
-              <a href={data.Marketing_info.gitHub} target="_blank"rel="noreferrer">
+              <a href={data.Marketing_info.gitHub} target="_blank" rel="noreferrer">
               <i className="fa-brands fa-github github">GitHub</i>
               </a>
             </li>
             <li>
-              <a href={data.Marketing_info.linkedIn}>
+              <a href={data.Marketing_info.linkedIn} target="_blank" rel="noreferrer">
               <i className="fa-brands fa-linkedin linkedin">Linkedin</i>
               </a>
             </li>
             <li>
-              <a href={data.Marketing_info.Resume}>
+              <a href={data.Marketing_info.resume} target="_blank" rel="noreferrer">
               <i className="fa-solid fa-file resume">Resume</i>
               </a>
             </li>
             <li>
-              <a href={data.Marketing_info.coverLetter}>
+              <a href={data.Marketing_info.coverLetter} target="_blank" rel="noreferrer">
               <i className="fa-solid fa-envelope coverletter">Cover Letter</i>
               </a>
             </li>
           </ul>
           <Link to={`/marketing/${data._id}`}>
-            <button className="btn-edit-marketing">Ediit</button>
+            <button className="btn-edit-marketing">Edit</button>
           </Link>
         </div>
     ));

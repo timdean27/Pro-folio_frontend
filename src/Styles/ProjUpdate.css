@@ -72,9 +72,14 @@ text-align: center;
 margin-top: 1vw;
 }
 
+.Project-Link{
+  text-decoration: none;
+}
 
 
 .ONEProj-HomePage-Container{
+text-decoration: none;
+color: black;
 overflow: auto;
 flex: 1;
 height: 70vh;
