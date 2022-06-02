@@ -90,7 +90,7 @@ const handleSubmit = (event) => {
       <Link className="Project-Link" key={data._id} to={`/project/${data._id}`}>
           <div  className='ONEProj-HomePage-Container'>
           <h1>{data.project.title}</h1>
-          <img src={data.project.image} alt={data.project.title} />
+          <img className="Project-IMG-ShowScreen" src={data.project.image} alt={data.project.title} />
           <p>{data.project.Description}</p> 
           <p>{data.project.shortVideo}</p>
           </div>
@@ -104,8 +104,9 @@ const handleSubmit = (event) => {
   }
 
   return (
+    <div>
+    <h1>Projects</h1>
     <div className='Projects-HomePage-Container'>
-    <h1>ShowProjects</h1>
     {ProjectsData ? loadedProjects() : loadingProjects()}
 
     <form onSubmit={handleSubmit}>
@@ -138,6 +139,7 @@ const handleSubmit = (event) => {
     />
     <input type='submit' value='Create New Project' />
 </form>
+    </div>
     </div>
   )
 }

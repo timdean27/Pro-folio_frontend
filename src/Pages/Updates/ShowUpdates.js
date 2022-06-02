@@ -62,9 +62,9 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
       <Link to={`/Updates/${data._id}`}>
             <div key={data._id} className='ShowUpdates-items-Container'>
               <p id="Update-Date">Posted:{data.updates.date_Of_Post}</p>
-              <p>Update Description:{data.updates.updateDescription}</p>
-              <p>Additons:{data.updates.additions}</p>
-              <p>Comments:{data.updates.comments}</p>
+              {!data.updates.updateDescription ? null : <p> Update Description 1:{data.updates.updateDescription}</p>}
+              {!data.updates.additions ? null : <p>Additons:{data.updates.additions}</p>}
+              {!data.updates.comments ? null : <p>Comments:{data.updates.comments}</p>}
               <p>Project Edited on:{data.updates.date_Of_Update}</p>
               
             </div>

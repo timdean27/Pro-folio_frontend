@@ -85,9 +85,7 @@ const SingleUpdateView = ({UpdatesData , editUpdate , deleteUpdate}) => {
     </form>
     </div>
     <button className="SinglePoj-deleteBTN" onClick={DeleteUpdateFunc}>
-            DELETE This Update
-            <br></br>
-            {UpdateCurrent._id}
+            DELETE
           </button>
     </div>
   )

@@ -75,7 +75,7 @@ const ShowMarketing = ({ MarketingData, createMarketing }) => {
 
   return (
     <div>
-      <h1>ShowMarketing</h1>
+      <h1>Marketing</h1>
       {MarketingData ? loadedMarketingData() : loadingMarketingData()}
       <form onSubmit={handleSubmit}>
         <input
