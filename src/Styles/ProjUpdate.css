@@ -12,6 +12,7 @@ html {
   text-align: center;
   padding-left: 3vw;
   background-color:grey;
+  
 }
 .ProjUpdates-container{
   display: flex;
@@ -67,9 +68,10 @@ html {
 .Projects-HomePage-Container{
 display: flex;
 flex-direction: row;
-border: .3em solid pink;
+border: .3em solid gold;
 text-align: center;
-margin-top: 1vw;
+background-image:linear-gradient(45deg, #060001 10%, gold 50%, black 100%, gold 30%, black 40%);
+color:white;
 }
 
 .Project-Link{
@@ -84,7 +86,7 @@ overflow: auto;
 flex: 1;
 height: 70vh;
 width:30vw;
-border: .3em solid green;
+border: .3em solid white;
 background-color:lightgrey;
 word-wrap: break-word;
 text-align: center;
@@ -108,7 +110,7 @@ margin-right: 1vw;
   padding: 10px;
 }
 .ShowUpdates-items-Container{
-  border: .3em solid pink;
+  border: .3em solid black;
   word-wrap: break-word;
   pointer-events: none;
 
@@ -124,7 +126,7 @@ margin-right: 1vw;
   position: relative;
   top: 0;
   bottom:100%;
-  border: .3em solid green;
+  border: .3em solid white;
 }
 
 

@@ -3,20 +3,23 @@
     text-align: center;
     font-size: 2em;
     padding: 0em 0;
-    color: whitesmoke;
+    color: black;
     min-height:400px;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 
 
   .contact-container{
-    background: linear-gradient(-45deg, #ee7752, #cb628a, #23a6d5, #23d5ab);
+    background-image:linear-gradient(45deg, #060001 10%, gold 50%, black 100%, gold 30%, black 40%);
      height: 70; 
     padding: 1em;
     justify-content:space-around; 
+    border: .3em solid gold;
   }
     body {
-        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
         height: 100vh;
