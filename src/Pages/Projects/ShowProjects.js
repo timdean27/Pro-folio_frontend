@@ -8,15 +8,12 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
   console.log("props from showProjects",ProjectsData)
   const [ImageInput, setImageInput] = useState("")
   //const [VideoInput, setVideoInput] = useState("")
-  const [ImageURLStore, setImageURLStore] = useState("")
-  //const [VideoURLStore, setVideoURLStore] = useState("")
-  const [ImageCloudDate, setImageCloudDate] = useState("")
-  //const [VideoCloudDate, setVideoCloudDate] = useState("")
+
   
   const [newProjectForm, setnewProjectForm] = useState({
     project:{
       title:"",
-      image:ImageURLStore,
+      image:"",
       Description:"",
       appLink:""
     }
@@ -42,17 +39,14 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
     {method: 'post', body:formData}
     ).then((response) =>response.json()) 
 
-    setImageCloudDate(ImageUrlData)
-    setImageURLStore(ImageUrlData.url)
-    // console.log('ImageUrlData' ,ImageUrlData)
-    // console.log('ImageUrlData.secure_url' ,ImageUrlData.secure_url)
-    console.log('ImageCloudDate' ,ImageCloudDate)
-    console.log('ImageURLStore' ,ImageURLStore)
+    //console.log('ImageUrlData' ,ImageUrlData)
+    console.log('ImageUrlData.secure_url' ,ImageUrlData.secure_url)
+
 
     setnewProjectForm({
       project: {
           ...newProjectForm.project,
-          image: ImageURLStore
+          image: ImageUrlData.url
       }
   })
   }
@@ -65,16 +59,12 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
   //   const VideoUrlData = await fetch(`https://api.cloudinary.com/v1_1/dtonselel/image/upload`,
   //   {method: 'post', body:formData}
   //   ).then((response) =>response.json()) 
-    
-  //   setVideoCloudDate(VideoUrlData)
-  //   setVideoURLStore(VideoUrlData.url)
-  //   console.log('VideoCloudDate' ,VideoCloudDate)
-  //   console.log('VideoURLStore' ,VideoURLStore)
+
 
   //   setnewProjectForm({
   //     project: {
   //         ...newProjectForm.project,
-  //         image: VideoURLStore
+  //         image: VideoUrlData.url
   //     }
   // })
   // }
