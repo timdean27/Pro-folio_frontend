@@ -10,8 +10,6 @@ const EditUsers = ({userData , updateUser , deleteUser}) => {
     let userCurrent = userData.find(user => user._id === id)
     const [edituser, setEdituser] = useState(userCurrent)
     const [PictureInput, setPictureInput] = useState("")
-  const [PictureURLStore, setPictureURLStore] = useState("")
-  const [PictureCloudDate, setPictureCloudDate] = useState("")
     // console.log("THIS IS THE IS From USER  Single",id)
     // console.log("THIS IS THE USER Data",userData)
     // console.log("userCurrent",userCurrent.user)
@@ -36,17 +34,14 @@ const EditUsers = ({userData , updateUser , deleteUser}) => {
       {method: 'post', body:formData}
       ).then((response) =>response.json()) 
     
-      setPictureCloudDate(PictureUrlData)
-      setPictureURLStore(PictureUrlData.url)
       // console.log('PictureUrlData' ,PictureUrlData)
-      // console.log('PictureUrlData.secure_url' ,PictureUrlData.secure_url)
-      console.log('PictureCloudDate' ,PictureCloudDate)
-      console.log('PictureURLStore' ,PictureURLStore)
+      console.log('PictureUrlData.secure_url' ,PictureUrlData.secure_url)
+    
     
       setEdituser({
         user: {
             ...edituser.user,
-            profilePic: PictureURLStore
+            profilePic: PictureUrlData.url
         }
     })
     }

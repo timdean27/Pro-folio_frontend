@@ -5,15 +5,14 @@ import React from 'react'
 const CreatUser = ({userData,createUser}) => {
   //console.log("props from ShowUsers",userData)
   const [PictureInput, setPictureInput] = useState("")
-  const [PictureURLStore, setPictureURLStore] = useState("")
-  const [PictureCloudDate, setPictureCloudDate] = useState("")
+
   
   const [newUserForm, setnewUserForm] = useState({
     user:{
       username: '',
       profileName: '',
       about: '',
-      profilePic: PictureURLStore,
+      profilePic: "",
       password: ''
   }
   })
@@ -37,17 +36,14 @@ const handlePictureInput = async (files) =>{
   {method: 'post', body:formData}
   ).then((response) =>response.json()) 
 
-  setPictureCloudDate(PictureUrlData)
-  setPictureURLStore(PictureUrlData.url)
-  // console.log('PictureUrlData' ,PictureUrlData)
-  // console.log('PictureUrlData.secure_url' ,PictureUrlData.secure_url)
-  console.log('PictureCloudDate' ,PictureCloudDate)
-  console.log('PictureURLStore' ,PictureURLStore)
+  console.log('PictureUrlData' ,PictureUrlData)
+  console.log('PictureUrlData.secure_url' ,PictureUrlData.url)
+
 
   setnewUserForm({
     user: {
         ...newUserForm.user,
-        profilePic: PictureURLStore
+        profilePic: PictureUrlData.url
     }
 })
 }

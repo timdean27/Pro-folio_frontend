@@ -16,10 +16,7 @@ const SingleProjectView = ({ProjectsData , updateProject, deleteProject}) => {
 const [editProject, setEditProject] = useState(projectCurrent)
 const [ImageInput, setImageInput] = useState("")
 //const [VideoInput, setVideoInput] = useState("")
-const [ImageURLStore, setImageURLStore] = useState("")
-//const [VideoURLStore, setVideoURLStore] = useState("")
-const [ImageCloudDate, setImageCloudDate] = useState("")
-//const [VideoCloudDate, setVideoCloudDate] = useState("")
+
 
 
 const handleChange = (event) => {
@@ -53,17 +50,15 @@ const handleImageInput = async (files) =>{
   {method: 'post', body:formData}
   ).then((response) =>response.json()) 
 
-  setImageCloudDate(ImageUrlData)
-  setImageURLStore(ImageUrlData.url)
-  // console.log('ImageUrlData' ,ImageUrlData)
-  // console.log('ImageUrlData.secure_url' ,ImageUrlData.secure_url)
-  console.log('ImageCloudDate' ,ImageCloudDate)
-  console.log('ImageURLStore' ,ImageURLStore)
+
+  console.log('ImageUrlData' ,ImageUrlData)
+  console.log('ImageUrlData.secure_url' ,ImageUrlData.secure_url)
+
 
   setEditProject({
     project: {
         ...editProject.project,
-        image: ImageURLStore
+        image: ImageUrlData.url
     }
 })
 
@@ -78,15 +73,11 @@ const handleImageInput = async (files) =>{
 //   {method: 'post', body:formData}
 //   ).then((response) =>response.json()) 
   
-//   setVideoCloudDate(VideoUrlData)
-//   setVideoURLStore(VideoUrlData.url)
-//   console.log('VideoCloudDate' ,VideoCloudDate)
-//   console.log('VideoURLStore' ,VideoURLStore)
-  
+
 //   setEditProject({
 //     project: {
 //         ...editProject.project,
-//         image: VideoURLStore
+//         image: VideoURLStore.url
 //     }
 // })
 // }

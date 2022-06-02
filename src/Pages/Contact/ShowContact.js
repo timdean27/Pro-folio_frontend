@@ -28,6 +28,7 @@ const ShowContact = ({ContactData, createContact}) => {
   const handleSubmit = (event) => {
       event.preventDefault();
       createContact(newContactForm);
+      sendEmail(event)
       setnewContactForm({
         reach_out_to_Dev:{
           yourEmail: '',
@@ -43,7 +44,6 @@ const ShowContact = ({ContactData, createContact}) => {
   const form = useRef();
 
   const sendEmail = (e) => {
-    e.preventDefault();
 
     emailjs.sendForm('service_a8wgdba', 'template_hc21lj3', e.target, 'WN4Yo7G89VsX0VFAk')
       .then((result) => {
@@ -71,18 +71,14 @@ const ShowContact = ({ContactData, createContact}) => {
 
 
 
-   const TwoOnsubmit =() =>{
-     console.log("running on submit")
-    sendEmail()
-    handleSubmit()
-   }
+
   //onSubmit={() => { sendEmail(); handleSubmit();}}
     return (
     <div className="contact-container">
       <h1 className="contact-header">Contact</h1>
       <section id="contact-section"></section>
       {ContactData ? loadedContacts() : loadingContacts()}
-      <form onSubmit={sendEmail} >
+      <form onSubmit={handleSubmit} >
       
         <input
             type='text'
