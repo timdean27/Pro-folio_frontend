@@ -20,7 +20,7 @@ const ShowUsers = ({userData}) => {
 
             <Link className="UserLink" to={`/user/${data._id}`}>
               <div id="About-Scroll" className='About-User-Container'>
-                <h1>{data.user.about}</h1>
+                <p className="About-User-p">{data.user.about}</p>
               </div>
             </Link>
 
