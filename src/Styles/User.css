@@ -7,14 +7,15 @@
 
 .User-HomePAGE-Div{
   margin-top:7vh;
-  background-image:linear-gradient(45deg, #060001 10%, gold 50%, black 100%, gold 30%, black 40%);
+  background-image:linear-gradient(45deg, rgb(5, 5, 3) 10%, gold 70%, black 80%);
   padding: 45px; 
    justify-content: space-around;  
    cursor: pointer;
    font-family: Georgia, 'Times New Roman', Times, serif;
    text-align: center;
    text-decoration: underline;
-   border: .3em solid white;
+   border: .2em solid gold;
+   
 
 }
 
