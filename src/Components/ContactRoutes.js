@@ -6,7 +6,7 @@ import ShowContact from '../Pages/Contact/ShowContact';
 
 const ContactRoutes = () => {
     const [ContactData, setContactData] = useState([])
-    const urlContact = 'http://localhost:4000/home/contact'
+    const urlContact = 'https://pro-folio.herokuapp.com/home/contact'
 
     async function getContactData() {
         await fetch(urlContact).then((res) => res.json())

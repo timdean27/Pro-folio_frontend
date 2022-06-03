@@ -6,7 +6,7 @@ import SingleProjectView from '../Pages/Projects/SingleProjectView';
 const ProjectsRoutes = () => {
 
     const [ProjectsData, setProjectsData] = useState([])
-    const urlProjects = 'http://localhost:4000/home/projects'
+    const urlProjects = 'https://pro-folio.herokuapp.com/home/projects'
 
     async function getProjectsData() {
         await fetch(urlProjects).then((res) => res.json())

@@ -84,7 +84,7 @@ color:white;
 
 
 .ONEProj-HomePage-Container{
-text-decoration: none;
+  text-decoration: none;
 color: black;
 overflow: auto;
 flex: 1;
@@ -130,7 +130,9 @@ margin-right: 1vw;
   text-align: center;
 }
 
-#Update-Date{
+.Update-Date{
+  text-decoration: none;
+  color: black;
   float: right;
   position: relative;
   top: 0;
@@ -138,7 +140,11 @@ margin-right: 1vw;
   border: .3em solid white;
 }
 
+.Update-Display-Text{
+  text-decoration: none;
+  color: black;
 
+}
 
 
 
