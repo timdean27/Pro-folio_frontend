@@ -84,24 +84,24 @@ const ShowContact = ({ContactData, createContact}) => {
             type='text'
             value={newContactForm.reach_out_to_Dev.yourQuestion}
             name='yourQuestion'
-            placeholder='yourQuestion'
+            placeholder='your Question'
             onChange={handleChange}
         />
         <input
             type='text'
             value={newContactForm.reach_out_to_Dev.yourEmail}
             name='yourEmail'
-            placeholder='yourEmail'
+            placeholder='your Email'
             onChange={handleChange}
         />
         <input
             type='text'
             value={newContactForm.reach_out_to_Dev.yourName}
             name='yourName'
-            placeholder='yourName'
+            placeholder='your Name'
             onChange={handleChange}
         />
-        <input type='submit' value='Create New Contact' />
+        <input type='submit' value='Send out Email' />
     </form>
       </div>
 
