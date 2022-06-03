@@ -61,11 +61,11 @@ const ShowUpdates = ({UpdatesData,createUpdates}) => {
     }).map((data) => (
       <Link to={`/Updates/${data._id}`}>
             <div key={data._id} className='ShowUpdates-items-Container'>
-              <p className="Update-Date">Posted:{data.updates.date_Of_Post}</p>
-              {!data.updates.updateDescription ? null : <p className="Update-Display-Text"> Update Description 1:{data.updates.updateDescription}</p>}
-              {!data.updates.additions ? null : <p className="Update-Display-Text">Additons:{data.updates.additions}</p>}
-              {!data.updates.comments ? null : <p className="Update-Display-Text">Comments:{data.updates.comments}</p>}
-              <p className="Update-Display-Text">Project Edited on:    {data.updates.date_Of_Update}</p>
+              <p className="Update-Date">Posted:  {new Date(data.updates.date_Of_Post).toLocaleDateString()}</p>
+              {!data.updates.updateDescription ? null : <p>Update Description:{'\u00A0'}{'\u00A0'}{data.updates.updateDescription}</p>}
+              {!data.updates.additions ? null : <p>Additons:{'\u00A0'}  {data.updates.additions}</p>}
+              {!data.updates.comments ? null : <p>Comments: {data.updates.comments}</p>}
+              <p>Project Edited on:{'\u00A0'} {new Date(data.updates.date_Of_Update).toLocaleDateString()}</p>
               
             </div>
       </Link>
