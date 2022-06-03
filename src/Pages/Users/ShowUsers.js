@@ -37,7 +37,7 @@ const ShowUsers = ({userData}) => {
     <div>  
     {userData ? loadedUsers() : loadingUsers()}
     <div className="createUserLink">
-         <Link to={`/CreatUser`}>Creat new User</Link>
+         <Link to={`/CreatUser`}>Create new User</Link>
     </div>
     
     </div>

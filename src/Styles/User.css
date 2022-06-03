@@ -79,8 +79,8 @@ Edit User page */
     margin-top:15vh;
   }
   .Profile-IMG{
-    height:200px;
-    width:200px 
+    max-height:300px;
+    max-width:300px 
   }
 
   .SingleUser-Forms-Container{

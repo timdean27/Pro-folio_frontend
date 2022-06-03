@@ -6,7 +6,7 @@ import SingleUpdateView from '../Pages/Updates/SingleUpdateView';
 const UpdatesRoutes = () => {
 
     const [UpdatesData, setUpdatesData] = useState([])
-    const urlUpdates = 'http://localhost:4000/home/updates'
+    const urlUpdates = 'https://pro-folio.herokuapp.com/home/updates'
 
     async function getUpdatesData() {
         await fetch(urlUpdates).then((res) => res.json())

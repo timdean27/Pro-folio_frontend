@@ -6,7 +6,7 @@ import SingleMarketingView from "../Pages/Marketing/SingleMarketingView";
 
 const MarketingRoutes = () => {
   const [MarketingData, setMarketingData] = useState([]);
-  const urlMarketing = "http://localhost:4000/home/marketing";
+  const urlMarketing = "https://pro-folio.herokuapp.com/home/marketing";
 
   async function getMarketingData() {
     await fetch(urlMarketing)

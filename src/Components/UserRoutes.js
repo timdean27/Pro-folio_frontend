@@ -7,7 +7,7 @@ import '../Styles/User.css';
 
 const UserRoutes = () => {
     const [userData, setuserData] = useState([])
-    const urlUser = 'http://localhost:4000/home/user'
+    const urlUser = 'https://pro-folio.herokuapp.com/home/user'
 
     async function getUserData() {
         await fetch(urlUser).then((res) => res.json())
