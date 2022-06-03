@@ -117,13 +117,20 @@ margin-right: 1vw;
   margin-top: 12vw;
   gap: 10px;
   padding: 10px;
+  text-decoration: none;
 }
 .ShowUpdates-items-Container{
   border: .3em solid black;
   word-wrap: break-word;
   pointer-events: none;
-
+  text-decoration: none;
 }
+
+.ShowUpdates-items-Container p{
+  text-decoration-line: none;
+  color: black;
+}
+
 .ShowUpdates-Forms-Container{
   border: .3em solid orange;
   background-color:white;
@@ -139,10 +146,7 @@ margin-right: 1vw;
   bottom:100%;
 }
 
-.ShowUpdates-items-Container p{
-  text-decoration-line: none;
-  color: black;
-}
+
 
 
 

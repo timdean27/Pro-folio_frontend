@@ -14,13 +14,15 @@ const ShowUsers = ({userData}) => {
             <Link className="UserLink" to={`/user/${data._id}`}>
               <div className='Profile-Container' >
               <img className="Profile-IMG" src={data.user.profilePic} alt="Profile Picture" />
-                  <h1>{data.user.profileName}</h1>
+                  
               </div>
             </Link>
 
             <Link className="UserLink" to={`/user/${data._id}`}>
               <div id="About-Scroll" className='About-User-Container'>
-                <p className="About-User-p">{data.user.about}</p>
+                <h1>{data.user.profileName}</h1>
+                <br></br>
+                <p>{data.user.about}</p>
               </div>
             </Link>
 
