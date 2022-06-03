@@ -67,10 +67,8 @@ const loadedUsers = () => {
   return userData.map((data) => (
     
           <div key={data._id} className='user'>
-          <Link to={`/user/${data._id}`}>
+          <p>{data.user.username}</p>
           <p>{data.user.profileName}</p>
-          </Link>
-            <p>{data.user.username}</p>
             <p>{data.user.about}</p>
             <p>{data.user.password}</p>
             <p>{data.user.profilePic}</p>

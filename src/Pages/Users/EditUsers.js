@@ -59,7 +59,6 @@ const EditUsers = ({userData , updateUser , deleteUser}) => {
   const loadedUsers = () => {
     return (
             <div key={userCurrent._id} className='userEDITing'>
-              <p>You clicked on user id: {userCurrent._id}</p>
               <p>{userCurrent.user.username}</p>
               <p>{userCurrent.user.profileName}</p>
               <p>{userCurrent.user.about}</p>
@@ -76,7 +75,6 @@ const EditUsers = ({userData , updateUser , deleteUser}) => {
 
   return (
     <div className='Main-SingleUser-Container'>
-    <h1>SingleuserView ID# :{userCurrent._id}</h1>
     {userData ? loadedUsers() : loadingUsers()}
       <div className='SingleUser-Forms-Container'>
           <form onSubmit={handleSubmit}>
