@@ -1,7 +1,7 @@
-import { useState , useNavigate } from 'react';
-import { Link } from 'react-router-dom';
-import React from 'react'
+import { useState} from 'react';
 
+import React from 'react'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 const CreatUser = ({userData,createUser}) => {
   //console.log("props from ShowUsers",userData)
   const [PictureInput, setPictureInput] = useState("")
