@@ -39,8 +39,8 @@ const ShowProjects= ({ProjectsData ,createProject}) => {
     {method: 'post', body:formData}
     ).then((response) =>response.json()) 
 
-    //console.log('ImageUrlData' ,ImageUrlData)
-    console.log('ImageUrlData.secure_url' ,ImageUrlData.secure_url)
+    console.log('ImageUrlData' ,ImageUrlData)
+    console.log('ImageUrlData.url' ,ImageUrlData.url)
 
 
     setnewProjectForm({
