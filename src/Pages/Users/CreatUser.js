@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState , useNavigate } from 'react';
 import { Link } from 'react-router-dom';
 import React from 'react'
 
 const CreatUser = ({userData,createUser}) => {
   //console.log("props from ShowUsers",userData)
   const [PictureInput, setPictureInput] = useState("")
-
+  const navigate = useNavigate()
   
   const [newUserForm, setnewUserForm] = useState({
     user:{
@@ -60,6 +60,7 @@ const handleSubmit = (event) => {
         password: ''
     }
     })
+    navigate(`/`)
 }
 
 
